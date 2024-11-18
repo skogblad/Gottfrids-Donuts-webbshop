@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv" prefix="og: https://ogp.me/ns#"> 
+<html lang="en" prefix="og: https://ogp.me/ns#"> 
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,23 +13,23 @@
    <meta property="og:discription" content="Handla hem Snaskköpings godaste munkar">
    <meta property="og:image" content="https://">
 
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_bag" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
 </head>
 <body>
    <header>
       <h1>Gottfrids munkshop</h1>
 
-      <input class="varukorg-btn" type="checkbox">
+      <input class="basket-btn" type="checkbox">
 
-      <div class="varukorg">
-         <button aria-label="din-beställning" aria-hidden="true">
+      <div class="basket">
+         <button aria-label="your-order" aria-hidden="true">
             <span class="material-symbols-outlined">shopping_bag</span>
          </button>
 
          <nav>
             <ul>
-            <li><a href="#Lägg-beställning">Lägg beställning</a></li>
+            <li><a href="#place-order">Lägg beställning</a></li>
             </ul>
          </nav>
       </div>
@@ -37,13 +37,92 @@
 
    <main>
       <article>
-
+         <img src="assets/photos/Äppelmunk.jpeg" alt="Rund, sockrig fylld munk">
+         <h2>Äppelmunk</h2>
+         25kr/st
       </article>
-
    </main>
-    
 
-    
+   <footer>
+      <section>
+         <form id="place-order">
+            <h3>Lägg beställning</h3>
+         
+            <label>
+               <span>Förnamn</span>
+               <input type="text" required>
+            </label>
+
+            <label>
+               <span>Efternamn</span>
+                  <input type="text" required>
+            </label>
+
+            <label>
+               <span>Adress</span>
+               <input type="text" required>
+            </label>
+
+            <label>
+               <span>Postnummer</span>
+               <input type="number" required>
+            </label>
+
+            <label>
+               <span>Postort</span>
+               <input type="text" required>
+            </label>
+
+            <label>
+               <span>Portkod</span>
+               <input type="text">
+            </label>
+         
+            <label>
+               <span>Email</span>
+               <input type="email" required>
+            </label>
+         
+            <label>
+               <span>Telefon</span>
+               <input type="tel" required>
+            </label>
+
+            <label>
+               <span>Betalsätt</span>
+               <input type="radio" id="card" name="payment">
+               <label for="card">Kort</label><br>
+               <input type="radio" id="invoice" name="payment">
+               <label for="invoice">Faktura</label><br>
+            </label>               
+
+            <label>
+               <span>Jag samtycker till behandling av mina personuppgifter</span>
+               <input type="checkbox" required>
+            </label>
+
+            <label>
+               <span>Jag önskar motta nyhetsbrev</span>
+               <input type="checkbox">
+            </label>
+         
+            <div class="form-buttons"> 
+               <input type="reset" value="Rensa" class="reset">
+               <input type="submit" value="Beställ" class="order">
+            </div>
+         </form>   
+      </section>
+
+      <address>
+         <div>
+            <a href="tel:+4681234567">+46 8 123 45 67 <span class="material-symbols-outlined">call</span> </a>
+            <a href="mailto:info@gottfridsmunkshop.com">info@gottfridsmunkshop.com <span class="material-symbols-outlined">alternate_email</span> </a>
+            <a href="text">Gottfrids munkshop, 111 25 Snaskköping <span class="material-symbols-outlined">location_on</span> </a>
+         </div>
+      </address>
+   </footer>
+   
+
    <script src="script.js"></script>
 </body>
 </html>
