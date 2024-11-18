@@ -108,15 +108,15 @@ const products = [
       },        
    },
    {
-      name: "Dubbelchoklad",
+      name: "Saffran",
       price: 20,
-      rating: 3,
-      category: "Choklad",
+      rating: 5,
+      category: "Bästsäljare",
       img: {
-         url: "assets/photos/Dubbelchoklad.jpeg",
+         url: "assets/photos/Saffran.jpeg",
          width: 500,
          height: 500,
-         alt: "Munk med ett överdrag av choklad."
+         alt: "Munk med ett överdrag av socker."
       },        
    },
    {
