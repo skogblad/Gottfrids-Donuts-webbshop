@@ -177,8 +177,8 @@ const productsListDiv = document.querySelector ("#products-list");
 //För att få produkterna synliga i webbläsaren:
 
 function printProductsList() {
-   //rensa div:en på befintliga produkter innan utskrift av uppdaterad info
-   productsListDiv.innerHTML = "";
+   
+   productsListDiv.innerHTML = ""; //rensa div:en på befintliga produkter innan utskrift av uppdaterad info
 
    products.forEach(product => {
       productsListDiv.innerHTML += `
