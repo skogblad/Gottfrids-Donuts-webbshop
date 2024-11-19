@@ -17,8 +17,8 @@ const products = [
       name: "Jordgubb",
       id: 1,
       price: 20,
-      rating: 5,
-      category: "Bästsäljare",
+      rating: 4,
+      category: "Fruktig",
       amount: 0,
       img: {
          url: "assets/photos/Jordgubb.jpeg",
@@ -189,7 +189,7 @@ function printProductsList() {
             <p>${product.price} kr</p>
             <p>${product.category} </p>
             <div>
-               <button class="decrease">decrease</button>
+               <button class="decrease" id="decrease-${product.id}">decrease</button>
                <input type="number" min="0" value="${product.amount}">
                <button class="increase" id="increase-${product.id}">increase</button>
             </div>
@@ -201,6 +201,11 @@ function printProductsList() {
    increaseButtons.forEach(button => {
       button.addEventListener("click", increaseProductCount); //en action för när vi klickar på knappen
    });
+
+   const decreaseButtons = document.querySelectorAll("button.decrease");
+   decreaseButtons.forEach(button => {
+      button.addEventListener("click", decreaseProductCount);
+   })
 }
 
 printProductsList(); //Anropar funktionen ovanför så allt blir synligt
@@ -226,4 +231,29 @@ function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjä
 
    //Skriv ut produktlistan på nytt
    printProductsList();
+}
+
+//funktion för decrease button:
+function decreaseProductCount(e) {
+   const DecreaseProductId = Number(e.target.id.replace("decrease-", ""));
+   console.log("clicked on button with ID:", DecreaseProductId);
+
+   const displayProductIndex = products.findIndex(product => product.id === DecreaseProductId);
+   console.log("found product at index:", displayProductIndex);
+
+   if (displayProductIndex === -1) {
+      console.error("Det finns ingen sådan produkt i listan tyvärr.")
+      return;
+   }
+
+   products[displayProductIndex].amount -= 1; {
+      if (products[displayProductIndex].amount < 0) { //så mindre tal än 0 ej går
+         products[displayProductIndex].amount = 0;
+      }
+   }
+
+   console.log(products[displayProductIndex]);
+
+   printProductsList();
+
 }
