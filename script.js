@@ -1,9 +1,11 @@
 const products = [
    {
       name: "Chokladdröm",
+      id: 0,
       price: 20,
       rating: 4,
       category: "Choklad",
+      amount: 0,
       img: {
          url: "assets/photos/Chokladdrom.jpeg",
          width: 500,
@@ -13,9 +15,11 @@ const products = [
    },
    {
       name: "Jordgubb",
+      id: 1,
       price: 20,
       rating: 5,
       category: "Bästsäljare",
+      amount: 0,
       img: {
          url: "assets/photos/Jordgubb.jpeg",
          width: 500,
@@ -25,9 +29,11 @@ const products = [
    },
    {
       name: "Sockersöt",
+      id: 2,
       price: 17,
       rating: 5,
       category: "Bästsäljare",
+      amount: 0,
       img: {
          url: "assets/photos/Sockersot.jpeg",
          width: 500,
@@ -37,9 +43,11 @@ const products = [
    },
    {
       name: "Citrondröm",
+      id: 3,
       price: 20,
       rating: 5,
       category: "Bästsäljare",
+      amount: 0,
       img: {
          url: "assets/photos/Citrondrom.jpeg",
          width: 500,
@@ -49,9 +57,11 @@ const products = [
    },
    {
       name: "Chokladkokos",
+      id: 4,
       price: 20,
       rating: 3,
       category: "Choklad",
+      amount: 0,
       img: {
          url: "assets/photos/Chokladkokos.jpeg",
          width: 500,
@@ -61,9 +71,11 @@ const products = [
    },
    {
       name: "Saltkaramell",
+      id: 5,
       price: 20,
       rating: 5,
       category: "Bästsäljare",
+      amount: 0,
       img: {
          url: "assets/photos/Saltkaramell.jpeg",
          width: 500,
@@ -73,9 +85,11 @@ const products = [
    },
    {
       name: "Mango",
+      id: 6,
       price: 20,
       rating: 2,
       category: "Fruktig",
+      amount: 0,
       img: {
          url: "assets/photos/Mango.jpeg",
          width: 500,
@@ -85,9 +99,11 @@ const products = [
    },
    {
       name: "Chokladkrisp",
+      id: 7,
       price: 20,
       rating: 3,
       category: "Choklad",
+      amount: 0,
       img: {
          url: "assets/photos/Chokladkrisp.jpeg",
          width: 500,
@@ -97,9 +113,11 @@ const products = [
    },
    {
       name: "Vitchoklad",
+      id: 8,
       price: 20,
       rating: 4,
       category: "Choklad",
+      amount: 0,
       img: {
          url: "assets/photos/Vitchoklad.jpeg",
          width: 500,
@@ -109,9 +127,11 @@ const products = [
    },
    {
       name: "Saffran",
+      id: 9,
       price: 20,
       rating: 5,
       category: "Bästsäljare",
+      amount: 0,
       img: {
          url: "assets/photos/Saffran.jpeg",
          width: 500,
@@ -121,9 +141,11 @@ const products = [
    },
    {
       name: "Hallonmunk",
+      id: 10,
       price: 25,
       rating: 3,
       category: "Fylld",
+      amount: 0,
       img: {
          url: "assets/photos/Hallonmunk.jpeg",
          width: 500,
@@ -133,9 +155,11 @@ const products = [
    },
    {
       name: "Äppelmunk",
+      id: 11,
       price: 25,
       rating: 3,
       category: "Fylld",
+      amount: 0,
       img: {
          url: "assets/photos/Appelmunk.jpeg",
          width: 500,
@@ -149,16 +173,57 @@ const products = [
 // -------------------------------------------------- //
 
 const productsListDiv = document.querySelector ("#products-list");
-console.log(productsListDiv);
 
-products.forEach(product => {
-   productsListDiv.innerHTML += `
-      <article class="product">
-         <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
-         <p>${product.rating}</p>
-         <h3>${product.name}</h3>
-         <p>${product.price} kr</p>
-         <p>${product.category} </p>
-      </article>
-   `;
-});
+//För att få produkterna synliga i webbläsaren:
+
+function printProductsList() {
+   //rensa div:en på befintliga produkter innan utskrift av uppdaterad info
+   productsListDiv.innerHTML = "";
+
+   products.forEach(product => {
+      productsListDiv.innerHTML += `
+         <article class="product">
+            <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
+            <p>${product.rating}</p>
+            <h3>${product.name}</h3>
+            <p>${product.price} kr</p>
+            <p>${product.category} </p>
+            <div>
+               <button class="decrease">decrease</button>
+               <input type="number" min="0" value="${product.amount}">
+               <button class="increase" id="increase-${product.id}">increase</button>
+            </div>
+         </article>
+      `;
+   });
+   //Få fungerande + & - knappar på munkarna:
+   const increaseButtons = document.querySelectorAll("button.increase"); //för att komma åt alla knappar
+   increaseButtons.forEach(button => {
+      button.addEventListener("click", increaseProductCount); //en action för när vi klickar på knappen
+   });
+}
+
+printProductsList(); //Anropar funktionen ovanför så allt blir synligt
+
+function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjälp av ID
+   const productId = Number(e.target.id.replace("increase-", "")); //omgjord till Number istället för sträng för att matcha ID nummer
+   console.log("clicked on button with id", productId);
+
+   //Leta rätt på produkten i arrayen som har det id:t
+   const foundProductIndex = products.findIndex(product => product.id === productId);
+   console.log("found product at index", foundProductIndex);
+
+   //Om produkten inte finns, skriv ut felmeddelande i consolen & avbryt att resten av koden körs (return)
+   if (foundProductIndex === -1) {
+      console.error("Det finns ingen sån produkt i listan!")
+      return;
+   }
+
+   //Hittar produkten i listan och ökar värdet med 1. [foundProductIndex] säger vilken plats den har
+   products[foundProductIndex].amount += 1;
+
+   console.log(products[foundProductIndex]);
+
+   //Skriv ut produktlistan på nytt
+   printProductsList();
+}
