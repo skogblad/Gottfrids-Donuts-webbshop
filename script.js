@@ -18,7 +18,7 @@ const products = [
       id: 1,
       price: 20,
       rating: 4,
-      category: "Fruktig",
+      category: "Vegansk",
       amount: 0,
       img: {
          url: "assets/photos/Jordgubb.jpeg",
@@ -88,7 +88,7 @@ const products = [
       id: 6,
       price: 20,
       rating: 2,
-      category: "Fruktig",
+      category: "Vegansk",
       amount: 0,
       img: {
          url: "assets/photos/Mango.jpeg",
@@ -128,9 +128,9 @@ const products = [
    {
       name: "Saffran",
       id: 9,
-      price: 20,
+      price: 30,
       rating: 5,
-      category: "Bästsäljare",
+      category: "Vegansk",
       amount: 0,
       img: {
          url: "assets/photos/Saffran.jpeg",
@@ -157,7 +157,7 @@ const products = [
       name: "Äppelmunk",
       id: 11,
       price: 25,
-      rating: 3,
+      rating: 4,
       category: "Fylld",
       amount: 0,
       img: {
@@ -256,4 +256,48 @@ function decreaseProductCount(e) {
 
    printProductsList();
 
+}
+
+
+// ------------------------------------------------------------ //
+// -------------------- Sortering av munkar-------------------- //
+
+//Alfabetisk:
+const alphaButton = document.querySelector ("#sort-alpha");
+
+alphaButton.addEventListener("click", sortByAlpha);
+
+function sortByAlpha () {
+   products.sort((product1, product2) => product1.name.localeCompare(product2.name));
+   printProductsList();
+}
+
+//Pris
+const priceButton = document.querySelector ("#sort-price");
+
+priceButton.addEventListener("click", sortByPrice);
+
+function sortByPrice () {
+   products.sort((product1, product2) => product1.price - product2.price);
+   printProductsList();
+}
+
+//Kategori
+const categoryButton = document.querySelector ("#sort-category");
+
+categoryButton.addEventListener("click", sortByCategory);
+
+function sortByCategory () {
+   products.sort((product1, product2) => product1.category.localeCompare(product2.category));
+   printProductsList();
+}
+
+//Recension
+const ratingButton = document.querySelector ("#sort-rating");
+
+ratingButton.addEventListener("click", sortByRating);
+
+function sortByRating () {
+   products.sort((product1, product2) => product2.rating - product1.rating);
+   printProductsList();
 }
