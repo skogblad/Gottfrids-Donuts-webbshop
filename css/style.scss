@@ -12,7 +12,11 @@
 
 * {
     box-sizing: border-box;
-  }
+}
+
+h2 {
+    display: inline;
+}
 
 #products-list {
     display: grid;
@@ -26,6 +30,17 @@ img {
     object-fit: cover;
 }
 
+.sort {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    bottom: 25px;
+}
+
+.price, .reviews {
+    margin-inline: 5px;
+}
+
 footer {
-    background-color: burlywood;
+    background-color: burlywood; //ta bort senare
 }
