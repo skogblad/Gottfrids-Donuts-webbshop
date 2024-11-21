@@ -17,7 +17,7 @@ const products = [
       name: "Jordgubb",
       id: 1,
       price: 20,
-      rating: 4,
+      rating: 3.5,
       category: "Vegansk",
       amount: 0,
       img: {
@@ -87,7 +87,7 @@ const products = [
       name: "Mango",
       id: 6,
       price: 20,
-      rating: 2,
+      rating: 2.5,
       category: "Vegansk",
       amount: 0,
       img: {
@@ -129,7 +129,7 @@ const products = [
       name: "Saffran",
       id: 9,
       price: 30,
-      rating: 5,
+      rating: 4.5,
       category: "Vegansk",
       amount: 0,
       img: {
@@ -174,7 +174,22 @@ const products = [
 
 const productsListDiv = document.querySelector ("#products-list");
 
-//För att få produkterna synliga i webbläsaren:
+// ------ För att få produkterna synliga i webbläsaren ----- //
+
+//Funktion för att få ut symbol i rating:
+function getRatingHtml(rating) {
+   
+   const isHalf = String(rating).indexOf(".");
+
+   let html = "";
+   for (let i = 0; i < rating; i++) {
+      html += "<span>⭐</span>";
+   }
+   if (isHalf !== -1) {
+      html += "<span>🐱</span>";
+   }
+   return html;
+}
 
 function printProductsList() {
    
@@ -184,7 +199,7 @@ function printProductsList() {
       productsListDiv.innerHTML += `
          <article class="product">
             <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
-            <p>${product.rating}</p>
+            <p>Rating: ${getRatingHtml(product.rating)}</p>
             <h3>${product.name}</h3>
             <p>${product.price} kr</p>
             <p>${product.category} </p>
