@@ -168,13 +168,22 @@ const products = [
       },        
    },
 ];
-// -------------------------------------------------- //
-// -------------------- HTML kod -------------------- //
-// -------------------------------------------------- //
+// ------------------------------------------------------------ 
+// ------------------------- HTML kod ------------------------- 
+
 
 const productsListDiv = document.querySelector ("#products-list");
 
-// ------ För att få produkterna synliga i webbläsaren ----- //
+// ------------------------------------------------------------ 
+// ----------------- Visa produkter i varukorg ---------------- 
+
+function updateAndPrintCart () {
+   
+}
+
+
+// ------------------------------------------------------------ 
+// ----------- Få produkterna synliga i webbläsaren ----------- 
 
 //Funktion för att få ut symbol i rating:
 function getRatingHtml(rating) {
@@ -243,6 +252,8 @@ function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjä
 
    //Skriv ut produktlistan på nytt
    printProductsList();
+
+   updateAndPrintCart();
 }
 
 //funktion för decrease button:
@@ -266,8 +277,8 @@ function decreaseProductCount(e) {
 }
 
 
-// ------------------------------------------------------------ //
-// -------------------- Sortering av munkar-------------------- //
+// ------------------------------------------------------------ 
+// -------------------- Sortering av munkar-------------------- 
 
 //Alfabetisk:
 const alphaButton = document.querySelector ("#sort-alpha");
