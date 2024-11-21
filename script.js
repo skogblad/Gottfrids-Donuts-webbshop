@@ -178,15 +178,16 @@ const productsListDiv = document.querySelector ("#products-list");
 
 //Funktion för att få ut symbol i rating:
 function getRatingHtml(rating) {
-   
-   const isHalf = String(rating).indexOf(".");
+
+   const isHalf = rating % 1 !== 0; //Kollar om en decimal finns
 
    let html = "";
-   for (let i = 0; i < rating; i++) {
-      html += "<span>⭐</span>";
+
+   for (let i = 0; i < Math.floor(rating); i++) {
+      html += "<span>★</span>";
    }
-   if (isHalf !== -1) {
-      html += "<span>🐱</span>";
+   if (isHalf) {
+      html += "<span>☆</span>";
    }
    return html;
 }
@@ -199,7 +200,7 @@ function printProductsList() {
       productsListDiv.innerHTML += `
          <article class="product">
             <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
-            <p>Rating: ${getRatingHtml(product.rating)}</p>
+            <p>${getRatingHtml(product.rating)}</p>
             <h3>${product.name}</h3>
             <p>${product.price} kr</p>
             <p>${product.category} </p>
