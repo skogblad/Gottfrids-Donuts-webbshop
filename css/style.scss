@@ -31,10 +31,6 @@ h1 {
     background-color: rgb(255, 245, 171);
 }
 
-main h2 {
-    display: inline;
-}
-
 .products-list {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -43,17 +39,31 @@ main h2 {
 .product {
     justify-items: center;
     text-align: center;
+
+    .category {
+        font-style: italic;
+    }
+
+    .decrease, .increase {
+        background-color: black;
+        color: white;
+    }
 }
 
 .sort {
     position: relative;
     display: flex;
     justify-content: end;
-    bottom: 25px;
-}
+    bottom: 15px;
+    
+    .sort-price, .sort-rating {
+        margin-inline: 5px;
+    }
 
-.price, .rating {
-    margin-inline: 5px;
+    .sort-price, .sort-rating, .sort-alpha, .sort-category {
+        color: rgb(0, 0, 0);
+        background-color: rgb(252, 252, 236);
+    }
 }
 
 footer {

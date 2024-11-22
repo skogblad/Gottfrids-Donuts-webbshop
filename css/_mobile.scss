@@ -1,7 +1,23 @@
+main h2 {
+   font-size: 1.5rem;
+   display: block;
+   text-align: center;
+   padding-bottom: 5px;
+}
+
+.sort .material-symbols-outlined {
+   font-size: 1rem;
+}
+
+.sort-price, .sort-rating, .sort-alpha, .sort-category {
+   padding-left: 3px;
+   padding-right: 3px;
+}
+
 .product {
    grid-column: span 6;
    margin-bottom: 50px;
- 
+   font-size: 1rem;
 
    input {
       width: 50%;
@@ -9,7 +25,11 @@
 
    img {
       width: 90%;
-      height: 50%;
+      height: 48%;
+   }
+
+   h3 {
+      font-size: 1.3rem;
    }
 
 }
