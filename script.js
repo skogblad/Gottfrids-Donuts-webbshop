@@ -222,7 +222,7 @@ function printProductsList() {
             <p>${getRatingHtml(product.rating)}</p>
             <h3>${product.name}</h3>
             <p>${product.price} kr/st</p>
-            <p>${product.category} </p>
+            <p class="category">${product.category} </p>
             <div>
                <button class="decrease" id="decrease-${product.id}">-</button>
                <input type="number" min="0" value="${product.amount}">
