@@ -176,9 +176,19 @@ const productsListDiv = document.querySelector ("#products-list");
 
 // ------------------------------------------------------------ 
 // ----------------- Visa produkter i varukorg ---------------- 
-
+const cart = document.querySelector("#cart-summary");
 function updateAndPrintCart () {
-   
+   const purchasedProducts = products.filter((product) => product.amount > 0);
+
+   cart.innerHTML = "";
+   purchasedProducts.forEach(product => {
+      cart.innerHTML += `
+      <div>
+       ${product.name}: ${product.amount} st - ${product.amount * product.price} kr
+      </div>
+      `;
+   });
+
 }
 
 
