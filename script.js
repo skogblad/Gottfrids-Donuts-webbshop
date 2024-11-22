@@ -214,9 +214,9 @@ function printProductsList() {
             <p>${product.price} kr</p>
             <p>${product.category} </p>
             <div>
-               <button class="decrease" id="decrease-${product.id}">decrease</button>
+               <button class="decrease" id="decrease-${product.id}">-</button>
                <input type="number" min="0" value="${product.amount}">
-               <button class="increase" id="increase-${product.id}">increase</button>
+               <button class="increase" id="increase-${product.id}">+</button>
             </div>
          </article>
       `;
@@ -235,6 +235,7 @@ function printProductsList() {
 
 printProductsList(); //Anropar funktionen ovanför så allt blir synligt
 
+//Funktion för increase button:
 function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjälp av ID
    const productId = Number(e.target.id.replace("increase-", "")); //omgjord till Number istället för sträng för att matcha ID nummer
 
@@ -256,7 +257,7 @@ function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjä
    updateAndPrintCart();
 }
 
-//funktion för decrease button:
+//Funktion för decrease button:
 function decreaseProductCount(e) {
    const DecreaseProductId = Number(e.target.id.replace("decrease-", ""));
 
