@@ -1,4 +1,47 @@
 .product {
-        grid-column: span 6;
+   grid-column: span 6;
+   margin-bottom: 50px;
+ 
+
+   input {
+      width: 50%;
+   }
+
+   img {
+      width: 90%;
+      height: 50%;
+   }
+
 }
 
+.place-order {
+   font-size: 1rem;
+
+   label span {
+      width: 90px;
+   }
+
+   .payment-option {
+       width: 241px;
+   }
+
+   .approve-info span {
+       width: 217px;
+   }
+
+   .newsletter span {
+       width: 217px;
+   }
+}
+
+address {
+   a {
+       padding-left: 40px;
+       padding-bottom: 10px;
+       font-size: 1rem;
+
+       .material-symbols-outlined {
+           left: 20px;   
+       }
+   }    
+}
