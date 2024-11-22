@@ -13,6 +13,9 @@
    <meta property="og:discription" content="Handla hem Snaskköpings godaste munkar och donuts!">
    <meta property="og:image" content="https://">
 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
 </head>
@@ -63,7 +66,7 @@
             </button>
          </div>
 
-         <div id="products-list">
+         <div id="products-list" class="products-list">
             <!-- tillägg med produkterna i olika artiklar från JavaScript-->
          </div> 
       </section>
@@ -71,7 +74,7 @@
 
    <footer>
       <section>
-         <form id="place-order">
+         <form id="place-order" class="place-order">
             <h2>Lägg beställning</h2>
          
             <label>
@@ -114,7 +117,7 @@
                <input type="tel" required>
             </label>
 
-            <label>
+            <label class="payment-option">
                <span>Betalsätt</span>
                <input type="radio" id="card" name="payment">
                <label for="card">Kort</label><br>
@@ -122,12 +125,12 @@
                <label for="invoice">Faktura</label><br>
             </label>               
 
-            <label>
+            <label class="approve-info">
                <span>Jag samtycker till behandling av mina personuppgifter</span>
                <input type="checkbox" required>
             </label>
 
-            <label>
+            <label class="newsletter">
                <span>Jag önskar motta nyhetsbrev</span>
                <input type="checkbox">
             </label>
