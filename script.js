@@ -221,7 +221,7 @@ function printProductsList() {
             <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
             <p>${getRatingHtml(product.rating)}</p>
             <h3>${product.name}</h3>
-            <p>${product.price} kr</p>
+            <p>${product.price} kr/st</p>
             <p>${product.category} </p>
             <div>
                <button class="decrease" id="decrease-${product.id}">-</button>
