@@ -195,7 +195,7 @@ function updateAndPrintCart () {
 
    if (purchasedProducts.length > 0) {
       cart.innerHTML += `<strong>Totalsumma: ${totalOrderSum} kr</strong>`;
-      cart.innerHTML += `<p><a href="#place-order">Lägg beställning</a></p>`;
+      cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
    }  else {
          cart.innerHTML = `<p>Din varukorg är tom.</p>`;
       }
