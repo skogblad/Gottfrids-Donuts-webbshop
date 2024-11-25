@@ -1,3 +1,22 @@
 .product {
-    grid-column: span 3;
+   grid-column: span 3;
+   font-size: 1.2rem;
+
+   input {
+      width: 60%;
+      font-size: 1rem;
+   }
+    
+   img {
+      width: 90%;
+      height: 55%;
+   }
+    
+   h3 {
+      font-size: 1.2rem;
+   }
+
+   .decrease, .increase {
+      font-size: 1rem;
+   }
 }
