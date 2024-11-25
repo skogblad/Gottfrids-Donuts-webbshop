@@ -1,8 +1,8 @@
 main h2 {
-   font-size: 1.5rem;
-   display: block;
-   text-align: center;
-   padding-bottom: 5px;
+   position: relative;
+   margin-bottom: 0;
+   font-size: 1.21rem;
+   width: 60%;
 }
 
 .sort .material-symbols-outlined {
@@ -12,6 +12,19 @@ main h2 {
 .sort-price, .sort-rating, .sort-alpha, .sort-category {
    padding-left: 3px;
    padding-right: 3px;
+}
+
+.cart {
+   font-size: 1rem;
+
+   h2 {
+      font-size: 1.2rem;
+   }
+
+   .add-order {
+      left: 100px;
+      padding-inline: 20px;
+  }
 }
 
 .product {
@@ -29,7 +42,7 @@ main h2 {
    }
 
    h3 {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
    }
 
 }

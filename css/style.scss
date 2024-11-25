@@ -29,6 +29,17 @@ h1 {
 .cart {
     padding: 10px;
     background-color: rgb(255, 245, 171);
+
+    .add-order {
+        display: block;
+        position: relative;
+        margin-top: 10px;
+    }
+}
+
+main h2 {
+   padding-top: 15px;
+   margin-left: 5px;
 }
 
 .products-list {
