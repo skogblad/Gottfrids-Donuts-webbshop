@@ -180,15 +180,20 @@ const cart = document.querySelector("#cart-summary");
 function updateAndPrintCart () {
    const purchasedProducts = products.filter((product) => product.amount > 0);
 
+   let totalOrderSum = 0;
+
    cart.innerHTML = "";
+
    purchasedProducts.forEach(product => {
+      totalOrderSum += product.amount * product.price;
       cart.innerHTML += `
-      <div>
+      <article>
        ${product.name}: ${product.amount} st - ${product.amount * product.price} kr
-      </div>
+      </article>
       `;
    });
 
+   cart.innerHTML += `<strong>Totalsumma: ${totalOrderSum} kr</strong>`;
 }
 
 
