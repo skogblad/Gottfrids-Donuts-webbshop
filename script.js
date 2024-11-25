@@ -193,7 +193,12 @@ function updateAndPrintCart () {
       `;
    });
 
-   cart.innerHTML += `<strong>Totalsumma: ${totalOrderSum} kr</strong>`;
+   if (purchasedProducts.length > 0) {
+      cart.innerHTML += `<strong>Totalsumma: ${totalOrderSum} kr</strong>`;
+      cart.innerHTML += `<p><a href="#place-order">Lägg beställning</a></p>`;
+   }  else {
+         cart.innerHTML = `<p>Din varukorg är tom.</p>`;
+      }
 }
 
 
