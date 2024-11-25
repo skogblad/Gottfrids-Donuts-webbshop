@@ -1,8 +1,10 @@
+h1 {
+   justify-self: center;
+}
+
 main h2 {
-   position: relative;
-   margin-bottom: 0;
-   font-size: 1.21rem;
-   width: 60%;
+   justify-self: center;
+   font-size: 1.3rem;
 }
 
 .sort .material-symbols-outlined {
@@ -12,6 +14,7 @@ main h2 {
 .sort-price, .sort-rating, .sort-alpha, .sort-category {
    padding-left: 3px;
    padding-right: 3px;
+   margin-top: 5px;
 }
 
 .cart {
