@@ -249,6 +249,8 @@ printProductsList(); //Anropar funktionen ovanför så allt blir synligt
 function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjälp av ID
    const productId = Number(e.target.id.replace("increase-", "")); //omgjord till Number istället för sträng för att matcha ID nummer
 
+   const clickedIncreaseBtnId = e.target.id;
+
    //Leta rätt på produkten i arrayen som har det id:t
    const foundProductIndex = products.findIndex(product => product.id === productId);
 
@@ -264,12 +266,16 @@ function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjä
    //Skriv ut produktlistan på nytt
    printProductsList();
 
+   document.querySelector(`#${clickedIncreaseBtnId}`).focus();
+
    updateAndPrintCart();
 }
 
 //Funktion för decrease button:
 function decreaseProductCount(e) {
    const DecreaseProductId = Number(e.target.id.replace("decrease-", ""));
+
+   const clickedDecreaseBtnId = e.target.id;
 
    const displayProductIndex = products.findIndex(product => product.id === DecreaseProductId);
 
@@ -285,6 +291,10 @@ function decreaseProductCount(e) {
    }
 
    printProductsList();
+
+   document.querySelector(`#${clickedDecreaseBtnId}`).focus();
+
+   updateAndPrintCart();
 }
 
 
