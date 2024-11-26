@@ -1,3 +1,4 @@
+//HTML kod för alla produkter
 const products = [
   {
     name: "Chokladdröm",
@@ -168,27 +169,29 @@ const products = [
     },        
   },
 ];
-// ------------------------------------------------------------ 
-// ------------------------- HTML kod ------------------------- 
-
 
 const productsListDiv = document.querySelector ("#products-list");
-
-// ------------------------------------------------------------ 
-// ----------------- Visa produkter i varukorg ---------------- 
 const cart = document.querySelector("#cart-summary");
+const today = new Date();
+const isFriday = today.getDay() === 5;
+const isMonday = today.getDay() === 1;
+const currentHour = today.getHours();
+
+
+//Visa produkter i varukorg
 function updateAndPrintCart () {
   const purchasedProducts = products.filter((product) => product.amount > 0);
 
   let totalOrderSum = 0;
+  let priceIncrease = getPriceMultiplier();
 
   cart.innerHTML = "";
 
   purchasedProducts.forEach(product => {
-    totalOrderSum += product.amount * product.price;
+    totalOrderSum += product.amount * (product.price * priceIncrease);
     cart.innerHTML += `
     <article>
-      ${product.name}: ${product.amount} st - ${product.amount * product.price} kr
+      ${product.name}: ${product.amount} st - ${product.amount * (product.price * priceIncrease)} kr
     </article>
     `;
   });
@@ -201,16 +204,55 @@ function updateAndPrintCart () {
   }
 
   //Skriv ut 10% rabatt på måndagar innan kl 10
-  const today = new Date();
   if (today.getDay() === 1 && today.getHours() < 10 && purchasedProducts.length > 0) {
   cart.innerHTML += `<p>Måndagsrabatt: 10 % på hela beställningen (-${totalOrderSum * 0.1} kr)</p>` 
   cart.innerHTML += `<strong>Totalt: ${totalOrderSum * 0.9} kr</strong>`;
   }
 }
 
+function getPriceMultiplier() {
+  if ((isFriday && currentHour >= 15) || (isMonday && currentHour < 3)) {
+    return 1.15;
+  } 
+  return 1;
+}
 
-// ------------------------------------------------------------ 
-// ----------- Få produkterna synliga i webbläsaren ----------- 
+//Få produkterna synliga i webbläsaren
+function printProductsList() {
+   
+  productsListDiv.innerHTML = ""; //rensa div:en på befintliga produkter innan utskrift av uppdaterad info
+
+  let priceIncrease = getPriceMultiplier();
+
+  products.forEach(product => {
+    productsListDiv.innerHTML += `
+      <article class="product">
+        <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
+        <p>${getRatingHtml(product.rating)}</p>
+        <h3>${product.name}</h3>
+        <p>${product.price * priceIncrease} kr/st</p>
+        <p class="category">${product.category} </p>
+        <div>
+          <button class="decrease" id="decrease-${product.id}">-</button>
+          <input type="number" min="0" value="${product.amount}">
+          <button class="increase" id="increase-${product.id}">+</button>
+        </div>
+      </article>
+    `;
+  });
+
+  //Få fungerande + & - knappar på munkarna:
+  const increaseButtons = document.querySelectorAll("button.increase"); //för att komma åt alla knappar
+  increaseButtons.forEach(button => {
+    button.addEventListener("click", increaseProductCount); //en action för när vi klickar på knappen
+  });
+
+  const decreaseButtons = document.querySelectorAll("button.decrease");
+  decreaseButtons.forEach(button => {
+    button.addEventListener("click", decreaseProductCount);
+  })
+
+}
 
 //Funktion för att få ut symbol i rating:
 function getRatingHtml(rating) {
@@ -226,38 +268,6 @@ function getRatingHtml(rating) {
     html += "<span>☆</span>";
   }
   return html;
-}
-
-function printProductsList() {
-   
-  productsListDiv.innerHTML = ""; //rensa div:en på befintliga produkter innan utskrift av uppdaterad info
-
-  products.forEach(product => {
-    productsListDiv.innerHTML += `
-      <article class="product">
-        <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
-        <p>${getRatingHtml(product.rating)}</p>
-        <h3>${product.name}</h3>
-        <p>${product.price} kr/st</p>
-        <p class="category">${product.category} </p>
-        <div>
-          <button class="decrease" id="decrease-${product.id}">-</button>
-          <input type="number" min="0" value="${product.amount}">
-          <button class="increase" id="increase-${product.id}">+</button>
-        </div>
-      </article>
-    `;
-  });
-//Få fungerande + & - knappar på munkarna:
-  const increaseButtons = document.querySelectorAll("button.increase"); //för att komma åt alla knappar
-  increaseButtons.forEach(button => {
-    button.addEventListener("click", increaseProductCount); //en action för när vi klickar på knappen
-  });
-
-  const decreaseButtons = document.querySelectorAll("button.decrease");
-  decreaseButtons.forEach(button => {
-    button.addEventListener("click", decreaseProductCount);
-  })
 }
 
 printProductsList(); //Anropar funktionen ovanför så allt blir synligt
@@ -314,9 +324,7 @@ function decreaseProductCount(e) {
   updateAndPrintCart();
 }
 
-
-// ------------------------------------------------------------ 
-// -------------------- Sortering av munkar-------------------- 
+//Sortering av munkar
 
 //Alfabetisk:
 const alphaButton = document.querySelector ("#sort-alpha");
