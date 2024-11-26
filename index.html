@@ -1,139 +1,138 @@
-<!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#"> 
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Gottfrids Donuts-webbshop</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gottfrids Donuts-webbshop</title>
 
-   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css"/>
 
-   <meta property="og:url" content="">
-   <meta property="og:type" content="website">
-   <meta property="og:title" content="Gottfrids Donuts">
-   <meta property="og:discription" content="Handla hem Snaskköpings godaste munkar och donuts!">
-   <meta property="og:image" content="https://">
+  <meta property="og:url" content=""/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Gottfrids Donuts"/>
+  <meta property="og:discription" content="Handla hem Snaskköpings godaste munkar och donuts!"/>
+  <meta property="og:image" content="https://"/>
 
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 </head>
+
 <body>
-   <header>
-      <h1>Gottfrids Donuts</h1>
+  <header>
+    <h1>Gottfrids Donuts</h1>
 
-      <section class="cart">
-         <h2>Varukorg</h2>
-         <!-- lista med produkterna som lagts i ens varukorg, generera med JavaScript -->
-         <div id="cart-summary">Din varukorg är tom.</div>
-      </section>
-   </header>
+    <section class="cart">
+      <h2>Varukorg</h2>
+      <!-- lista med produkterna som lagts i ens varukorg, generera med JavaScript -->
+      <div id="cart-summary">Din varukorg är tom.</div>
+    </section>
+  </header>
 
-   <main>
-      <section>
-         <h2>Våra hembakade munkar och donuts</h2>
-         <div id="sort-products" class="sort">
-            <button id="sort-alpha" class="sort-alpha">
-               <span class="material-symbols-outlined">sort_by_alpha</span>
-            </button>
-            <button id="sort-price" class="sort-price">
-               <span class="material-symbols-outlined">price_change</span>
-            </button>
-            <button id="sort-category" class="sort-category">
-               <span class="material-symbols-outlined">category</span>
-            </button>
-            <button id="sort-rating" class="sort-rating">
-               <span class="material-symbols-outlined">reviews</span>
-            </button>
-         </div>
+  <main>
+    <section>
+      <h2>Våra hembakade munkar och donuts</h2>
+      <div id="sort-products" class="sort">
+        <button id="sort-alpha" class="sort-alpha">
+          <span class="material-symbols-outlined">sort_by_alpha</span>
+        </button>
+        <button id="sort-price" class="sort-price">
+          <span class="material-symbols-outlined">price_change</span>
+        </button>
+        <button id="sort-category" class="sort-category">
+          <span class="material-symbols-outlined">category</span>
+        </button>
+        <button id="sort-rating" class="sort-rating">
+          <span class="material-symbols-outlined">reviews</span>
+        </button>
+      </div>
 
-         <div id="products-list" class="products-list">
-            <!-- tillägg med produkterna i olika artiklar från JavaScript-->
-         </div> 
-      </section>
-   </main>
+      <div id="products-list" class="products-list">
+        <!-- tillägg med produkterna i olika artiklar från JavaScript-->
+      </div>
+    </section>
+  </main>
 
-   <footer>
-      <section>
-         <form id="place-order" class="place-order">
-            <h2>Lägg beställning</h2>
-         
-            <label>
-               <span>Förnamn</span>
-               <input type="text" required>
-            </label>
+  <footer>
+    <section>
+      <form id="place-order" class="place-order">
+        <h2>Lägg beställning</h2>
 
-            <label>
-               <span>Efternamn</span>
-                  <input type="text" required>
-            </label>
+        <label>
+          <span>Förnamn</span>
+          <input type="text" required />
+        </label>
 
-            <label>
-               <span>Adress</span>
-               <input type="text" required>
-            </label>
+        <label>
+          <span>Efternamn</span>
+          <input type="text" required />
+        </label>
 
-            <label>
-               <span>Postnummer</span>
-               <input type="number" required>
-            </label>
+        <label>
+          <span>Adress</span>
+          <input type="text" required />
+        </label>
 
-            <label>
-               <span>Postort</span>
-               <input type="text" required>
-            </label>
+        <label>
+          <span>Postnummer</span>
+          <input type="number" required />
+        </label>
 
-            <label>
-               <span>Portkod</span>
-               <input type="text">
-            </label>
-         
-            <label>
-               <span>Email</span>
-               <input type="email" required>
-            </label>
-         
-            <label>
-               <span>Telefon</span>
-               <input type="tel" required>
-            </label>
+        <label>
+          <span>Postort</span>
+          <input type="text" required />
+        </label>
 
-            <label class="payment-option">
-               <span>Betalsätt</span>
-               <input type="radio" id="card" name="payment">
-               <label for="card">Kort</label><br>
-               <input type="radio" id="invoice" name="payment">
-               <label for="invoice">Faktura</label><br>
-            </label>               
+        <label>
+          <span>Portkod</span>
+          <input type="text" />
+        </label>
 
-            <label class="approve-info">
-               <span>Jag samtycker till behandling av mina personuppgifter</span>
-               <input type="checkbox" required>
-            </label>
+        <label>
+          <span>Email</span>
+          <input type="email" required />
+        </label>
 
-            <label class="newsletter">
-               <span>Jag önskar motta nyhetsbrev</span>
-               <input type="checkbox">
-            </label>
-         
-            <div class="form-buttons"> 
-               <input type="reset" value="Rensa" class="reset">
-               <input type="submit" value="Beställ" class="order">
-            </div>
-         </form>   
-      </section>
+        <label>
+          <span>Telefon</span>
+          <input type="tel" required />
+        </label>
 
-      <address>
-         <div>
-            <a href="tel:+4681234567">+46 8 123 45 67 <span class="material-symbols-outlined">call</span> </a>
-            <a href="mailto:info@gottfridsmunkshop.com">info@gottfridsmunkshop.com <span class="material-symbols-outlined">alternate_email</span> </a>
-            <a href="text">Gottfrids munkshop, 111 25 Snaskköping <span class="material-symbols-outlined">location_on</span> </a>
-         </div>
-      </address>
-   </footer>
-   
+        <label class="payment-option">
+          <span>Betalsätt</span>
+          <input type="radio" id="card" name="payment" />
+          <label for="card">Kort</label><br />
+          <input type="radio" id="invoice" name="payment" />
+          <label for="invoice">Faktura</label><br />
+        </label>
 
-   <script src="script.js"></script>
+        <label class="approve-info">
+          <span>Jag samtycker till behandling av mina personuppgifter</span>
+          <input type="checkbox" required />
+        </label>
+
+        <label class="newsletter">
+          <span>Jag önskar motta nyhetsbrev</span>
+          <input type="checkbox" />
+        </label>
+
+        <div class="form-buttons">
+          <input type="reset" value="Rensa" class="reset" />
+          <input type="submit" value="Beställ" class="order" />
+        </div>
+      </form>
+    </section>
+
+    <address>
+      <div>
+        <a href="tel:+4681234567">+46 8 123 45 67 <span class="material-symbols-outlined">call</span></a>
+        <a href="mailto:info@gottfridsmunkshop.com">info@gottfridsmunkshop.com<span class="material-symbols-outlined">alternate_email</span></a>
+        <a href="text">Gottfrids munkshop, 111 25 Snaskköping<span class="material-symbols-outlined">location_on</span></a>
+      </div>
+    </address>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
