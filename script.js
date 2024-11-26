@@ -194,11 +194,18 @@ function updateAndPrintCart () {
   });
 
   if (purchasedProducts.length > 0) {
-    cart.innerHTML += `<strong>Totalsumma: ${totalOrderSum} kr</strong>`;
+    cart.innerHTML += `<strong>Summa: ${totalOrderSum} kr</strong>`;
     cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
   } else {
-      cart.innerHTML = `<p>Din varukorg är tom.</p>`;
-    }
+    cart.innerHTML = `<p>Din varukorg är tom.</p>`;
+  }
+
+  //Skriv ut 10% rabatt på måndagar innan kl 10
+  const today = new Date();
+  if (today.getDay() === 1 && today.getHours() < 10 && purchasedProducts.length > 0) {
+  cart.innerHTML += `<p>Måndagsrabatt: 10 % på hela beställningen (-${totalOrderSum * 0.1} kr)</p>` 
+  cart.innerHTML += `<strong>Totalt: ${totalOrderSum * 0.9} kr</strong>`;
+  }
 }
 
 
