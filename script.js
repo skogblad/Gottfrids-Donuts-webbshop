@@ -216,7 +216,7 @@ function updateAndPrintCart () {
     const productTotal = product.amount * product.price;
     const discount10By10 = productTotal * 0.1;
 
-    cart.innerHTML += `<p>${product.name} - storpacksrabatt: 10% (-${discount10By10} kr)</p>`;
+    cart.innerHTML += `<p>${product.name}: 10 % rabatt storpack (-${discount10By10} kr)</p>`;
     cart.innerHTML += `<strong>Totalt: ${totalOrderSum - discount10By10} kr</strong>`;
   });
 }
