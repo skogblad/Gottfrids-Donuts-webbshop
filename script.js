@@ -196,24 +196,38 @@ function updateAndPrintCart () {
     `;
   });
 
-  if (purchasedProducts.length > 0) {
+  if (purchasedProducts.length <= 0) {
+    cart.innerHTML = `<p>Din varukorg är tom.</p>`;
+  } else {
     cart.innerHTML += `<strong>Summa: ${totalOrderSum} kr</strong>`;
     cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
-  } else {
-    cart.innerHTML = `<p>Din varukorg är tom.</p>`;
   }
 
   //Skriv ut 10% rabatt på måndagar innan kl 10
-  if (today.getDay() === 1 && today.getHours() < 10 && purchasedProducts.length > 0) {
+  if (isMonday && currentHour < 10 && purchasedProducts.length > 0) {
   cart.innerHTML += `<p>Måndagsrabatt: 10 % på hela beställningen (-${totalOrderSum * 0.1} kr)</p>` 
   cart.innerHTML += `<strong>Totalt: ${totalOrderSum * 0.9} kr</strong>`;
   }
+
+  //Få 10% rabatt vid köp av 10st lika
+  const tenOfSameProduct = products.filter((product) => product.amount >= 10);
+  
+  tenOfSameProduct.forEach((product) => { 
+    const productTotal = product.amount * product.price;
+    const discount10By10 = productTotal * 0.1;
+
+    cart.innerHTML += `<p>${product.name} - storpacksrabatt: 10% (-${discount10By10} kr)</p>`;
+    cart.innerHTML += `<strong>Totalt: ${totalOrderSum - discount10By10} kr</strong>`;
+  });
 }
 
+//Få ut de olika rabatterna som gäller?? Lägga in alla? 
 function getPriceMultiplier() {
-  if ((isFriday && currentHour >= 15) || (isMonday && currentHour < 3)) {
+
+  //Få rabatt under helgen
+   if ((isFriday && currentHour >= 15) || (isMonday && currentHour < 3)) {
     return 1.15;
-  } 
+  }
   return 1;
 }
 
