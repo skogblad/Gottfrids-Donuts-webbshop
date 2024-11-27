@@ -188,10 +188,10 @@ function updateAndPrintCart () {
   cart.innerHTML = "";
 
   purchasedProducts.forEach(product => {
-    totalOrderSum += product.amount * (product.price * priceIncrease);
+    totalOrderSum += product.amount * (product.price * priceIncrease).toFixed(2);
     cart.innerHTML += `
     <article>
-      ${product.name}: ${product.amount} st - ${product.amount * (product.price * priceIncrease)} kr
+      ${product.name}: ${product.amount} st - ${product.amount * ((product.price * priceIncrease).toFixed(2))} kr
     </article>
     `;
   });
@@ -230,7 +230,7 @@ function printProductsList() {
         <img src="${product.img.url}" alt="${product.img.alt}" width=${product.img.width} height=${product.img.height}>
         <p>${getRatingHtml(product.rating)}</p>
         <h3>${product.name}</h3>
-        <p>${product.price * priceIncrease} kr/st</p>
+        <p>${(product.price * priceIncrease).toFixed(2)} kr/st</p>
         <p class="category">${product.category} </p>
         <div>
           <button class="decrease" id="decrease-${product.id}">-</button>
