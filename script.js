@@ -188,32 +188,31 @@ function updateAndPrintCart () {
 
   //Varukorgen
   purchasedProducts.forEach(product => {
+    if (product.amount > 0) {
+      let productPrice = product.price;
+      if (product.amount >= 10) {
+        productPrice *= 0.9;
+        msg += `<p>${product.name}: 10 % rabatt storpack</p>`
+      }
     
-    totalOrderSum += product.amount * (product.price * priceIncrease).toFixed(2);
-    
-    cart.innerHTML += `
-    <article>
-      ${product.name}: ${product.amount} st - ${(product.amount * (product.price * priceIncrease)).toFixed(2)} kr
-    </article>
-    `;
-  });
+      totalOrderSum += product.amount * (productPrice * priceIncrease).toFixed(2);
 
-  //Få 10% rabatt vid köp av 10st lika
- const tenOfSameProduct = products.filter((product) => product.amount >= 10);   
-  tenOfSameProduct.forEach((product) => { 
-    const discount10By10 = (product.amount * product.price) * 0.1;
-    msg += `<p>${product.name}: 10 % rabatt storpack (-${discount10By10} kr)</p>`;
-    // totalOrderSum += ${shippingFee + (totalOrderSum - discount10By10)};
+      cart.innerHTML += `
+      <article>
+        ${product.name}: ${product.amount} st - ${(product.amount * (productPrice * priceIncrease)).toFixed(2)} kr
+      </article>
+      `;
+    }
   });
   
-  //Skriv ut 10% rabatt på måndagar innan kl 10
+  //Beräkna fraktkostnaden
+  const shippingFee = 25 + (totalOrderSum * 0.1);
+  
+  //Skriv ut 10% rabatt måndagar innan kl 10 på hela beställning (ej frakt) 
   if (isMonday && currentHour < 10 && purchasedProducts.length > 0) {
     totalOrderSum *= 0.9;
     msg += "<p>Måndagsrabatt: 10 % på hela beställningen</p>";
   }
-
-  //Beräkna fraktkostnaden
-  const shippingFee = 25 + (totalOrderSum * 0.1);
 
   cart.innerHTML += `<p>Frakt: ${shippingFee.toFixed(2)} kr</p>`;
   cart.innerHTML += `<strong>Summa: ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
