@@ -172,18 +172,16 @@ const products = [
 
 const productsListDiv = document.querySelector ("#products-list");
 const cart = document.querySelector("#cart-summary");
-const today = new Date();
-const isFriday = today.getDay() === 5;
-const isMonday = today.getDay() === 1;
-const currentHour = today.getHours();
-
 
 //Visa produkter i varukorg
 function updateAndPrintCart () {
   const purchasedProducts = products.filter((product) => product.amount > 0);
+  const today = new Date();
+  const isMonday = today.getDay() === 1;
+  const currentHour = today.getHours();
 
   let totalOrderSum = 0;
-  let priceIncrease = getPriceMultiplier();
+  let priceIncrease = weekendPriceIncrease();
 
   cart.innerHTML = "";
 
@@ -224,11 +222,11 @@ function updateAndPrintCart () {
   });
 }
 
-//Få ut de olika rabatterna som gäller?? Lägga in alla? 
-function getPriceMultiplier() {
+//Lägg till helgpåslag på ord. priset på alla produkter
+function weekendPriceIncrease() {
+  const weekend = new Date();
 
-  //Få rabatt under helgen
-   if ((isFriday && currentHour >= 15) || (isMonday && currentHour < 3)) {
+  if ((weekend.getDay() === 5 && weekend.getHours() >= 15) || (weekend.getDay() === 1 && weekend.getHours() < 3)) {
     return 1.15;
   }
   return 1;
@@ -237,9 +235,9 @@ function getPriceMultiplier() {
 //Få produkterna synliga i webbläsaren
 function printProductsList() {
    
-  productsListDiv.innerHTML = ""; //rensa div:en på befintliga produkter innan utskrift av uppdaterad info
+  productsListDiv.innerHTML = "";
 
-  let priceIncrease = getPriceMultiplier();
+  let priceIncrease = weekendPriceIncrease();
 
   products.forEach(product => {
     productsListDiv.innerHTML += `
