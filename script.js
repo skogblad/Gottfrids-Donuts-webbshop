@@ -194,20 +194,21 @@ function updateAndPrintCart () {
     `;
   });
 
-  const shipping = 25 + (totalOrderSum * 0.1);
+  //Beräkna fraktkostnaden
+  const shippingFee = 25 + (totalOrderSum * 0.1);
 
   if (purchasedProducts.length <= 0) {
     cart.innerHTML = `<p>Din varukorg är tom.</p>`;
   } else {   
-    cart.innerHTML += `<p>Frakt: ${shipping.toFixed(2)} kr</p>`;
-    cart.innerHTML += `<strong>Summa: ${(totalOrderSum + shipping).toFixed(2)} kr</strong>`;
+    cart.innerHTML += `<p>Frakt: ${shippingFee.toFixed(2)} kr</p>`;
+    cart.innerHTML += `<strong>Summa: ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
     cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
   }
 
   //Skriv ut 10% rabatt på måndagar innan kl 10
   if (isMonday && currentHour < 10 && purchasedProducts.length > 0) {
   cart.innerHTML += `<p>Måndagsrabatt: 10 % på hela beställningen (-${totalOrderSum * 0.1} kr)</p>` 
-  cart.innerHTML += `<strong>Totalt: ${shipping + (totalOrderSum * 0.9)} kr</strong>`;
+  cart.innerHTML += `<strong>Totalt: ${shippingFee + (totalOrderSum * 0.9)} kr</strong>`;
   }
 
   //Få 10% rabatt vid köp av 10st lika
@@ -218,7 +219,7 @@ function updateAndPrintCart () {
     const discount10By10 = productTotal * 0.1;
 
     cart.innerHTML += `<p>${product.name}: 10 % rabatt storpack (-${discount10By10} kr)</p>`;
-    cart.innerHTML += `<strong>Totalt: ${shipping + (totalOrderSum - discount10By10)} kr</strong>`;
+    cart.innerHTML += `<strong>Totalt: ${shippingFee + (totalOrderSum - discount10By10)} kr</strong>`;
   });
 }
 
