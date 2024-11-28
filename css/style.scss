@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 375px) {
   @import "_mobile";
 }
@@ -10,9 +14,6 @@
   @import "_desktop";
 }
 
-* {
-  box-sizing: border-box;
-}
 
 a {
   text-decoration: none;
