@@ -206,7 +206,13 @@ function updateAndPrintCart () {
   });
   
   //Beräkna fraktkostnaden
-  const shippingFee = 25 + (totalOrderSum * 0.1);
+  const totalAmountOfProducts = purchasedProducts.reduce((sum, product) => sum + product.amount, 0);
+  
+  let shippingFee = 25 + (totalOrderSum * 0.1);
+
+  if (totalAmountOfProducts >= 15) {
+    shippingFee = 0;
+  }
   
   //Skriv ut 10% rabatt måndagar innan kl 10 på hela beställning (ej frakt) 
   if (isMonday && currentHour < 10 && purchasedProducts.length > 0) {
@@ -225,7 +231,7 @@ function updateAndPrintCart () {
 
 }
 
-//Lägg till helgpåslag på ord. priset på alla produkter
+//Lägg till helgpåslag 15% på ord. priset på alla produkter
 function weekendPriceIncrease() {
   const weekend = new Date();
 
