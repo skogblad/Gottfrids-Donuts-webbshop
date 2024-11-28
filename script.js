@@ -317,11 +317,11 @@ function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjä
 
 //Funktion för decrease button:
 function decreaseProductCount(e) {
-  const DecreaseProductId = Number(e.target.id.replace("decrease-", ""));
+  const decreaseProductId = Number(e.target.id.replace("decrease-", ""));
 
   const clickedDecreaseBtnId = e.target.id;
 
-  const displayProductIndex = products.findIndex(product => product.id === DecreaseProductId);
+  const displayProductIndex = products.findIndex(product => product.id === decreaseProductId);
 
   if (displayProductIndex === -1) {
     console.error("Det finns ingen sådan produkt i listan tyvärr.")
