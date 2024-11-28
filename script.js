@@ -181,6 +181,7 @@ function updateAndPrintCart () {
   const currentHour = today.getHours();
 
   let totalOrderSum = 0;
+  let totalAmountOfProducts = 0;
   let msg = "";
   let priceIncrease = weekendPriceIncrease();
 
@@ -188,6 +189,8 @@ function updateAndPrintCart () {
 
   //Varukorgen
   purchasedProducts.forEach(product => {
+    totalAmountOfProducts += product.amount;
+   
     if (product.amount > 0) {
       let productPrice = product.price;
       if (product.amount >= 10) {
@@ -206,8 +209,6 @@ function updateAndPrintCart () {
   });
   
   //Beräkna fraktkostnaden
-  const totalAmountOfProducts = purchasedProducts.reduce((sum, product) => sum + product.amount, 0);
-  
   let shippingFee = 25 + (totalOrderSum * 0.1);
 
   if (totalAmountOfProducts >= 15) {
@@ -220,8 +221,9 @@ function updateAndPrintCart () {
     msg += "<p>Måndagsrabatt: 10 % på hela beställningen</p>";
   }
 
+  cart.innerHTML += `<p>Summa: ${totalOrderSum.toFixed(2)} kr</p>`;
   cart.innerHTML += `<p>Frakt: ${shippingFee.toFixed(2)} kr</p>`;
-  cart.innerHTML += `<strong>Summa: ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
+  cart.innerHTML += `<strong>Totalt ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
   cart.innerHTML += `<div>${msg}</div>`;
   cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
   
