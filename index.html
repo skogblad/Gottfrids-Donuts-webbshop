@@ -125,33 +125,34 @@
           <div class="invoice" id="invoice">
             <label>
               <span>Personnummer</span>
-              <input type="number" name="personal-id" id="personal-id">
+              <input type="text" name="personal-id" id="personal-id">
             </label>
           </div>
         
           <div class="card hidden" id="card">
             <label>
               <span>Kortnummer</span>
-              <input type="number">
+              <input type="number" id="credit-card-number"> 
             </label>
             <label>
               <span>Datum</span>
               <span>
-              <input type="number" class="small" placeholder="YY">/<input type="number" class="small" placeholder="MM">
+              <input type="number" class="small" placeholder="YY" id="credit-card-year">/<input type="number" class="small" placeholder="MM" id="credit-card-month">
               </span>
             </label>
             <label>
               <span>CVC</span>
-              <input type="number" placeholder="123">
+              <input type="number" placeholder="123" id="credit-card-cvc">
             </label>
           </div>
         </div>
           
         <div class="form-buttons">
           <input type="reset" value="Rensa" class="reset">
-          <input type="submit" value="Beställ" class="order">
+          <input type="submit" value="Beställ" class="order" id="order-btn" disabled>
         </div>
       </form>
+
     </section>
 
     <address>
