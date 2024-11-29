@@ -394,15 +394,84 @@ function sortByRating () {
 
 //Ändrar mellan de olika betalsätten
 const cardInvocieRadios = Array.from(document.querySelectorAll(`input[name="payment-option"]`));
+const creditCardNumber = document.querySelector("#credit-card-number");
+const creditCardYear = document.querySelector("#credit-card-year");
+const creditCardMonth = document.querySelector("#credit-card-month");
+const creditCardCvc = document.querySelector("#credit-card-cvc");
+
+const personalId = document.querySelector("#personal-id");
+
+const invoiceOption = document.querySelector("#invoice");
+const cardOption = document.querySelector("#card");
+
+const orderBtn = document.querySelector("#order-btn");
+
+let selectedPaymentOption = "invoice";
+
+//RegEx
+const personalIdRegEx = new RegExp(/^(\d{10}|\d{12}|\d{6}-\d{4}|\d{8}-\d{4}|\d{8} \d{4}|\d{6} \d{4})/);
+const creditCardNumberRegEx = new RegExp(/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/); //MasterCard
 
 cardInvocieRadios.forEach(radioBtn => {
   radioBtn.addEventListener("change", switchPaymentMethod);
 });
 
-const invoiceOption = document.querySelector("#invoice");
-const cardOption = document.querySelector("#card");
-
-function switchPaymentMethod () {
+function switchPaymentMethod (e) {
   invoiceOption.classList.toggle("hidden");
   cardOption.classList.toggle("hidden");
+
+  selectedPaymentOption = e.target.value;
 }
+
+//Dubbelkolla att betalningssätt är korrekt ifyllt och då aktivera "Beställ"-knappen
+personalId.addEventListener("focusout", activateOrderButton);
+personalId.addEventListener("change", activateOrderButton);
+
+function isPersonalIdNumberValid () {
+  return personalIdRegEx.exec(personalId.value);
+}
+
+function activateOrderButton () {
+  orderBtn.setAttribute("disabled", "");
+
+  if (selectedPaymentOption === "invoice" && !isPersonalIdNumberValid()) {
+    return;
+  } 
+  
+  if (selectedPaymentOption === "card") {
+    //Kolla kortnummer
+    if (creditCardNumberRegEx.exec(creditCardNumber.value) === null) {
+      return;
+    }
+    let year = Number(creditCardYear.value);
+    const today = new Date();
+    const shortYear = Number(String(today.getFullYear()).substring(2));
+
+    //Kolla kort år
+    if (year > shortYear + 4 || year < shortYear) { //Kortet gäller detta år och 4 år framåt
+      console.warn("Kort gäller ej längre.");
+      return;
+    }
+
+    // TODO: LÄGG IN MÅNAD - OBS. "padStart" med 0
+    //Kolla kort månad
+
+    //Kolla kort CVC
+    if (creditCardCvc.value.length !== 3) {
+      console.warn("Cvc är fel")
+      return;
+    }
+  }
+
+  orderBtn.removeAttribute("disabled");
+}
+
+creditCardNumber.addEventListener("focusout", activateOrderButton);
+creditCardYear.addEventListener("focusout", activateOrderButton);
+creditCardMonth.addEventListener("focusout", activateOrderButton);
+creditCardCvc.addEventListener("focusout", activateOrderButton);
+
+creditCardNumber.addEventListener("change", activateOrderButton);
+creditCardYear.addEventListener("change", activateOrderButton);
+creditCardMonth.addEventListener("change", activateOrderButton);
+creditCardCvc.addEventListener("change", activateOrderButton);
