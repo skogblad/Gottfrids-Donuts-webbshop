@@ -391,3 +391,18 @@ function sortByRating () {
   products.sort((product1, product2) => product2.rating - product1.rating);
   printProductsList();
 }
+
+//Ändrar mellan de olika betalsätten
+const cardInvocieRadios = Array.from(document.querySelectorAll(`input[name="payment-option"]`));
+
+cardInvocieRadios.forEach(radioBtn => {
+  radioBtn.addEventListener("change", switchPaymentMethod);
+});
+
+const invoiceOption = document.querySelector("#invoice");
+const cardOption = document.querySelector("#card");
+
+function switchPaymentMethod () {
+  invoiceOption.classList.toggle("hidden");
+  cardOption.classList.toggle("hidden");
+}
