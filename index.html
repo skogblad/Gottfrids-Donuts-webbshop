@@ -99,14 +99,6 @@
           <input type="tel" required>
         </label>
 
-        <div class="payment-option">
-          <span>Betalsätt</span>
-          <input type="radio" id="card" name="payment">
-          <label for="card">Kort</label>
-          <input type="radio" id="invoice" name="payment">
-          <label for="invoice">Faktura</label>
-        </div>
-
         <label class="approve-info">
           <span>Jag samtycker till behandling av mina personuppgifter</span>
           <input type="checkbox" required>
@@ -114,9 +106,47 @@
 
         <label class="newsletter">
           <span>Jag önskar motta nyhetsbrev</span>
-          <input type="checkbox">
+          <input type="checkbox" checked>
         </label>
 
+        <div class="payment-option">
+          <div class="selector">
+            <span>Betalsätt</span>
+            <label>
+              <input type="radio" name="payment-option" value="invoice" checked>
+              <span>Faktura</span>
+            </label>
+            <label>
+              <input type="radio" name="payment-option" value="card">
+              <span>Kort</span>
+            </label>
+          </div>
+
+          <div class="invoice" id="invoice">
+            <label>
+              <span>Personnummer</span>
+              <input type="number" name="personal-id" id="personal-id">
+            </label>
+          </div>
+        
+          <div class="card hidden" id="card">
+            <label>
+              <span>Kortnummer</span>
+              <input type="number">
+            </label>
+            <label>
+              <span>Datum</span>
+              <span>
+              <input type="number" class="small" placeholder="YY">/<input type="number" class="small" placeholder="MM">
+              </span>
+            </label>
+            <label>
+              <span>CVC</span>
+              <input type="number" placeholder="123">
+            </label>
+          </div>
+        </div>
+          
         <div class="form-buttons">
           <input type="reset" value="Rensa" class="reset">
           <input type="submit" value="Beställ" class="order">
