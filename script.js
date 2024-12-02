@@ -172,6 +172,22 @@ const products = [
 
 const productsListDiv = document.querySelector ("#products-list");
 const cart = document.querySelector("#cart-summary");
+const cardInvocieRadios = Array.from(document.querySelectorAll(`input[name="payment-option"]`));
+const creditCardNumber = document.querySelector("#credit-card-number");
+const creditCardYear = document.querySelector("#credit-card-year");
+const creditCardMonth = document.querySelector("#credit-card-month");
+const creditCardCvc = document.querySelector("#credit-card-cvc");
+const personalId = document.querySelector("#personal-id");
+const invoiceOption = document.querySelector("#invoice");
+const cardOption = document.querySelector("#card");
+const orderBtn = document.querySelector("#order-btn");
+
+let selectedPaymentOption = "card";
+
+//RegEx
+const personalIdRegEx = new RegExp(/^(\d{10}|\d{12}|\d{6}-\d{4}|\d{8}-\d{4}|\d{8} \d{4}|\d{6} \d{4})/);
+const creditCardNumberRegEx = new RegExp(/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/); //MasterCard
+
 
 //Visa produkter i varukorg
 function updateAndPrintCart () {
@@ -409,28 +425,8 @@ function sortByRating () {
   printProductsList();
 }
 
-// -------------------------- Städa upp kod nedan ---------------------- //
-
+//------------------------- Beställningsformulär ------------------------- 
 //Ändrar mellan de olika betalsätten
-const cardInvocieRadios = Array.from(document.querySelectorAll(`input[name="payment-option"]`));
-const creditCardNumber = document.querySelector("#credit-card-number");
-const creditCardYear = document.querySelector("#credit-card-year");
-const creditCardMonth = document.querySelector("#credit-card-month");
-const creditCardCvc = document.querySelector("#credit-card-cvc");
-
-const personalId = document.querySelector("#personal-id");
-
-const invoiceOption = document.querySelector("#invoice");
-const cardOption = document.querySelector("#card");
-
-const orderBtn = document.querySelector("#order-btn");
-
-let selectedPaymentOption = "card";
-
-//RegEx
-const personalIdRegEx = new RegExp(/^(\d{10}|\d{12}|\d{6}-\d{4}|\d{8}-\d{4}|\d{8} \d{4}|\d{6} \d{4})/);
-const creditCardNumberRegEx = new RegExp(/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/); //MasterCard
-
 cardInvocieRadios.forEach(radioBtn => {
   radioBtn.addEventListener("change", switchPaymentMethod);
 });
@@ -495,7 +491,6 @@ creditCardYear.addEventListener("change", activateOrderButton);
 creditCardMonth.addEventListener("change", activateOrderButton);
 creditCardCvc.addEventListener("change", activateOrderButton);
 
-// -------------------------- Städa upp kod ovan ---------------------- //
 
 //Rensa varukorg och beställnigsformulär med "Rensa beställning"-knapp
 const resetBtn = document.querySelector("#reset-btn");
