@@ -231,6 +231,14 @@ function updateAndPrintCart () {
     cart.innerHTML = `<p>Din varukorg är tom.</p>`;
   }
 
+  //Ta bort faktura som betalsätt totalsumme på 800kr eller mer
+  if (totalOrderSum + shippingFee >= 800) {
+    document.getElementById("invoice-payment-option").disabled=true;
+    personalId.disabled=true;
+  } else {
+    document.getElementById("invoice-payment-option").disabled=false;
+    personalId.disabled=false;
+  }
 }
 
 //Lägg till helgpåslag 15% på ord. priset på alla produkter
@@ -406,7 +414,7 @@ const cardOption = document.querySelector("#card");
 
 const orderBtn = document.querySelector("#order-btn");
 
-let selectedPaymentOption = "invoice";
+let selectedPaymentOption = "card";
 
 //RegEx
 const personalIdRegEx = new RegExp(/^(\d{10}|\d{12}|\d{6}-\d{4}|\d{8}-\d{4}|\d{8} \d{4}|\d{6} \d{4})/);
