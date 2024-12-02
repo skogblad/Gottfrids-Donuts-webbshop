@@ -179,6 +179,7 @@ function updateAndPrintCart () {
   const today = new Date();
   const isMonday = today.getDay() === 1;
   const currentHour = today.getHours();
+  const finalAmount = document.querySelector("#final-amount");
 
   let totalOrderSum = 0;
   let totalAmountOfProducts = 0;
@@ -239,6 +240,14 @@ function updateAndPrintCart () {
     document.getElementById("invoice-payment-option").disabled=false;
     personalId.disabled=false;
   }
+
+  //Totalbelopp i beställningsformuläret
+  if (purchasedProducts.length >= 1) {
+    finalAmount.innerHTML = `<strong>Totalbelopp: ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
+  } else {
+    finalAmount.innerHTML = `<strong>Totalbelopp: 0 kr</strong>`;
+  }
+  
 }
 
 //Lägg till helgpåslag 15% på ord. priset på alla produkter
