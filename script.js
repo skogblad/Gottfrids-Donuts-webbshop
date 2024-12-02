@@ -400,6 +400,8 @@ function sortByRating () {
   printProductsList();
 }
 
+// -------------------------- Städa upp kod nedan ---------------------- //
+
 //Ändrar mellan de olika betalsätten
 const cardInvocieRadios = Array.from(document.querySelectorAll(`input[name="payment-option"]`));
 const creditCardNumber = document.querySelector("#credit-card-number");
@@ -483,3 +485,18 @@ creditCardNumber.addEventListener("change", activateOrderButton);
 creditCardYear.addEventListener("change", activateOrderButton);
 creditCardMonth.addEventListener("change", activateOrderButton);
 creditCardCvc.addEventListener("change", activateOrderButton);
+
+// -------------------------- Städa upp kod ovan ---------------------- //
+
+//Rensa varukorg och beställnigsformulär med "Rensa beställning"-knapp
+const resetBtn = document.querySelector("#reset-btn");
+
+resetBtn.addEventListener("click", resetCart);
+
+function resetCart () {
+  products.filter((product) => product.amount = 0);
+  
+  updateAndPrintCart();
+
+  printProductsList();
+}
