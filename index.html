@@ -113,23 +113,16 @@
           <div class="selector">
             <span>Betalsätt</span>
             <label>
-              <input type="radio" name="payment-option" value="invoice" checked>
-              <span>Faktura</span>
-            </label>
-            <label>
-              <input type="radio" name="payment-option" value="card">
+              <input type="radio" name="payment-option" value="card" id="card-payment-option" checked>
               <span>Kort</span>
             </label>
-          </div>
-
-          <div class="invoice" id="invoice">
             <label>
-              <span>Personnummer</span>
-              <input type="text" name="personal-id" id="personal-id">
+              <input type="radio" name="payment-option" value="invoice" id="invoice-payment-option">
+              <span>Faktura</span>
             </label>
           </div>
         
-          <div class="card hidden" id="card">
+          <div class="card" id="card">
             <label>
               <span>Kortnummer</span>
               <input type="number" id="credit-card-number"> 
@@ -146,7 +139,14 @@
             </label>
           </div>
         </div>
-          
+
+        <div class="invoice hidden" id="invoice">
+          <label>
+            <span>Personnummer</span>
+            <input type="text" name="personal-id" id="personal-id">
+          </label>
+        </div>
+
         <div class="form-buttons">
           <input type="reset" value="Rensa" class="reset">
           <input type="submit" value="Beställ" class="order" id="order-btn" disabled>
