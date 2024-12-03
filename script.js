@@ -181,6 +181,7 @@ const personalId = document.querySelector("#personal-id");
 const invoiceOption = document.querySelector("#invoice");
 const cardOption = document.querySelector("#card");
 const orderBtn = document.querySelector("#order-btn");
+const orderForm = document.querySelector("#place-order");
 
 let selectedPaymentOption = "card";
 
@@ -503,4 +504,12 @@ function resetCart () {
   updateAndPrintCart();
 
   printProductsList();
+}
+
+//Rensa beställningsformulär och meddela kund efter 15min av inaktivitet
+let slownessTimeout = setTimeout(customerSlowMessage, 1000 * 60 * 15);
+
+function customerSlowMessage() {
+  alert("Din session har gått ut, fyll i dina uppgifter igen.");
+  orderForm.reset();
 }
