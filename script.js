@@ -336,7 +336,7 @@ function getRatingHtml(rating) {
 
 printProductsList(); //Anropar funktionen ovanför så allt blir synligt
 
-//Funktion för increase button:
+//Funktion för öka-knappen ska fungera:
 function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjälp av ID
   const productId = Number(e.target.id.replace("increase-", "")); //omgjord till Number istället för sträng för att matcha ID nummer
 
@@ -362,7 +362,7 @@ function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjä
   updateAndPrintCart();
 }
 
-//Funktion för decrease button:
+//Funktion för minska-knappen ska fungera:
 function decreaseProductCount(e) {
   const decreaseProductId = Number(e.target.id.replace("decrease-", ""));
 
@@ -441,18 +441,17 @@ function isPersonalIdNumberValid () {
 function activateOrderButton () {
   orderBtn.setAttribute("disabled", "");
 
-  if (selectedPaymentOption === "invoice" && !isPersonalIdNumberValid()) {
-    return;
-  } 
-  
+  let year = Number(creditCardYear.value);
+  let month = Number(creditCardMonth.value);
+  const today = new Date();
+  const shortYear = Number(String(today.getFullYear()).substring(2));
+
   if (selectedPaymentOption === "card") {
     //Kolla kortnummer
     if (creditCardNumberRegEx.exec(creditCardNumber.value) === null) {
+      console.warn("Fel kortnummer.");
       return;
     }
-    let year = Number(creditCardYear.value);
-    const today = new Date();
-    const shortYear = Number(String(today.getFullYear()).substring(2));
 
     //Kolla kort år
     if (year > shortYear + 4 || year < shortYear) { //Kortet gäller detta år och 4 år framåt
@@ -460,14 +459,21 @@ function activateOrderButton () {
       return;
     }
 
-    // TODO: LÄGG IN MÅNAD - OBS. "padStart" med 0
     //Kolla kort månad
+    if (month < 1 || month > 12 || creditCardMonth.value.length !== 2) {
+      console.warn("Månad finns ej");
+      return;
+    }
 
     //Kolla kort CVC
     if (creditCardCvc.value.length !== 3) {
-      console.warn("Cvc är fel")
+      console.warn("Cvc är fel");
       return;
     }
+
+    if (selectedPaymentOption === "invoice" && !isPersonalIdNumberValid()) {
+      return;
+    } 
   }
 
   orderBtn.removeAttribute("disabled");
@@ -494,7 +500,7 @@ function resetCart () {
   printProductsList();
 }
 
-//Rensa beställningsformulär och meddela kund efter 15min av inaktivitet
+//Rensa beställningsformulär och meddela kund efter 15min av långsamhet
 let slownessTimeout = setTimeout(customerSlowMessage, 1000 * 60 * 15);
 function customerSlowMessage() {
   alert("Din session har gått ut, fyll i dina uppgifter igen.");
