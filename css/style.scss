@@ -32,7 +32,6 @@ img {
 
 h1 {
   font-family: "Merienda", sans-serif;
-  font-size: 2rem;
 }
 
 .cart {
@@ -47,10 +46,6 @@ h1 {
     padding-top: 5px;
     padding-bottom: 5px;
   }
-}
-
-main h2 {
-  padding-top: 15px;
 }
 
 .products-list {
@@ -73,18 +68,20 @@ main h2 {
 }
 
 .sort {
-  position: relative;
-  display: flex;
-  justify-content: end;
 
   .sort-price, .sort-rating {
     margin-inline: 5px;
   }
 
-  .sort-price, .sort-rating, .sort-alpha, .sort-category {
+  .sort-price, 
+  .sort-rating, 
+  .sort-alpha, 
+  .sort-category {
     color: rgb(0, 0, 0);
     background-color: rgb(241, 231, 240);
-    border: none;
+    border-color: rgb(241, 231, 240);
+    border-style: ridge 2px;
+    cursor: pointer;
   }
 }
 
