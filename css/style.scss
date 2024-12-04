@@ -6,19 +6,6 @@
   display: none;
 }
 
-@media screen and (min-width: 375px) {
-  @import "_mobile";
-}
-
-@media screen and (min-width: 767px) {
-  @import "_tablet";
-}
-
-@media screen and (min-width: 1024px) {
-  @import "_desktop";
-}
-
-
 a {
   text-decoration: none;
   color: black;
@@ -47,6 +34,23 @@ h1 {
     padding-bottom: 5px;
   }
 }
+.sort {
+
+  .sort-price, .sort-rating {
+    margin-inline: 5px;
+  }
+
+  .sort-price, 
+  .sort-rating, 
+  .sort-alpha, 
+  .sort-category {
+    color: rgb(0, 0, 0);
+    background-color: rgb(241, 231, 240);
+    border-color: rgb(241, 231, 240);
+    border-style: 2px ridge;
+    cursor: pointer;
+  }
+}
 
 .products-list {
   display: grid;
@@ -67,26 +71,8 @@ h1 {
   }
 }
 
-.sort {
-
-  .sort-price, .sort-rating {
-    margin-inline: 5px;
-  }
-
-  .sort-price, 
-  .sort-rating, 
-  .sort-alpha, 
-  .sort-category {
-    color: rgb(0, 0, 0);
-    background-color: rgb(241, 231, 240);
-    border-color: rgb(241, 231, 240);
-    border-style: ridge 2px;
-    cursor: pointer;
-  }
-}
-
 footer {
-  background-color: rgb(246, 211, 242); //ta bort senare
+  background-color: rgb(246, 211, 242);
 }
 
 .place-order {
@@ -105,31 +91,20 @@ footer {
       display: inline-flex;
     }
   }
-
-  // .payment-option {
-  //   display: flex;
-  // }
 }
 
 .payment-option label span {
   display: inline;
 }
 
-address {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: rgb(241, 231, 240);
+@media screen and (min-width: 375px) {
+  @import "_mobile";
+}
 
-  a {
-    display: flex;
-    color: black;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1rem;
-    font-style: normal;
+@media screen and (min-width: 767px) {
+  @import "_tablet";
+}
 
-    .material-symbols-outlined {
-      position: absolute;
-    }    
-  }
+@media screen and (min-width: 1024px) {
+  @import "_desktop";
 }
