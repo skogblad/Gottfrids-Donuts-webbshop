@@ -1,9 +1,5 @@
 const productsListDiv = document.querySelector ("#products-list");
 const cart = document.querySelector("#cart-summary");
-const alphaButton = document.querySelector ("#sort-alpha");
-const priceButton = document.querySelector ("#sort-price");
-const categoryButton = document.querySelector ("#sort-category");
-const ratingButton = document.querySelector ("#sort-rating");
 const cardInvocieRadios = Array.from(document.querySelectorAll(`input[name="payment-option"]`));
 const creditCardNumber = document.querySelector("#credit-card-number");
 const creditCardYear = document.querySelector("#credit-card-year");
@@ -13,14 +9,11 @@ const personalId = document.querySelector("#personal-id");
 const invoiceOption = document.querySelector("#invoice");
 const cardOption = document.querySelector("#card");
 const orderBtn = document.querySelector("#order-btn");
-const resetBtn = document.querySelector("#reset-btn");
-const orderForm = document.querySelector("#place-order");
-
-let selectedPaymentOption = "card";
 
 //RegEx
 const personalIdRegEx = new RegExp(/^(\d{10}|\d{12}|\d{6}-\d{4}|\d{8}-\d{4}|\d{8} \d{4}|\d{6} \d{4})/);
 const creditCardNumberRegEx = new RegExp(/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/); //MasterCard
+
 
 //HTML kod för alla produkter
 const products = [
@@ -388,8 +381,11 @@ function decreaseProductCount(e) {
   updateAndPrintCart();
 }
 
-//------------------------- Sortering av munkar -------------------------
+//----------------------------- Sortering av munkar -----------------------------
+//-------------------------------------------------------------------------------
+
 //Alfabetisk:
+const alphaButton = document.querySelector ("#sort-alpha");
 alphaButton.addEventListener("click", sortByAlpha);
 function sortByAlpha () {
   products.sort((product1, product2) => product1.name.localeCompare(product2.name));
@@ -397,6 +393,7 @@ function sortByAlpha () {
 }
 
 //Pris
+const priceButton = document.querySelector ("#sort-price");
 priceButton.addEventListener("click", sortByPrice);
 function sortByPrice () {
   products.sort((product1, product2) => product1.price - product2.price);
@@ -404,6 +401,7 @@ function sortByPrice () {
 }
 
 //Kategori
+const categoryButton = document.querySelector ("#sort-category");
 categoryButton.addEventListener("click", sortByCategory);
 function sortByCategory () {
   products.sort((product1, product2) => product1.category.localeCompare(product2.category));
@@ -411,17 +409,22 @@ function sortByCategory () {
 }
 
 //Recension
+const ratingButton = document.querySelector ("#sort-rating");
 ratingButton.addEventListener("click", sortByRating);
 function sortByRating () {
   products.sort((product1, product2) => product2.rating - product1.rating);
   printProductsList();
 }
 
-//------------------------- Beställningsformulär ------------------------- 
+//----------------------------- Beställningsformulär ----------------------------- 
+//--------------------------------------------------------------------------------
+
 //Ändrar mellan de olika betalsätten
 cardInvocieRadios.forEach(radioBtn => {
   radioBtn.addEventListener("change", switchPaymentMethod);
 });
+
+let selectedPaymentOption = "card";
 
 function switchPaymentMethod (e) {
   invoiceOption.classList.toggle("hidden");
@@ -491,6 +494,7 @@ creditCardCvc.addEventListener("change", activateOrderButton);
 
 
 //Rensa varukorg och beställnigsformulär med "Rensa beställning"-knapp
+const resetBtn = document.querySelector("#reset-btn");
 resetBtn.addEventListener("click", resetCart);
 function resetCart () {
   products.filter((product) => product.amount = 0);
@@ -501,6 +505,7 @@ function resetCart () {
 }
 
 //Rensa beställningsformulär och meddela kund efter 15min av långsamhet
+const orderForm = document.querySelector("#place-order");
 let slownessTimeout = setTimeout(customerSlowMessage, 1000 * 60 * 15);
 function customerSlowMessage() {
   alert("Din session har gått ut, fyll i dina uppgifter igen.");
