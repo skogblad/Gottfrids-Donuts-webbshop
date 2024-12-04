@@ -97,6 +97,11 @@ footer {
   display: inline;
 }
 
+.error {
+  color: red;
+  font-size: 1rem;
+}
+
 @media screen and (min-width: 375px) {
   @import "_mobile";
 }
