@@ -3,10 +3,24 @@ h1 {
   font-size: 2rem;
 }
 
+.cart {
+  font-size: 1rem;
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .add-order {
+    left: 100px;
+    padding-inline: 20px;
+  }
+}
+
 main h2 {
   justify-self: center;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   padding-top: 15px;
+
 }
 
 .sort {
@@ -25,19 +39,6 @@ main h2 {
     padding-left: 3px;
     padding-right: 3px;
     margin-top: 5px;
-  }
-}
-
-.cart {
-  font-size: 1rem;
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  .add-order {
-    left: 100px;
-    padding-inline: 20px;
   }
 }
 
@@ -68,10 +69,6 @@ main h2 {
     width: 90px;
   }
 
-  // .payment-option {
-  //   width: 241px;
-  // }
-
   .approve-info span {
     width: 217px;
   }
@@ -82,13 +79,24 @@ main h2 {
 }
 
 address {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(241, 231, 240);
+
   a {
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-style: normal;
     padding-left: 40px;
     padding-bottom: 10px;
     font-size: 1rem;
 
     .material-symbols-outlined {
-      left: 20px;   
-    }
-  }    
+      position: absolute;
+      left: 20px; 
+    }    
+  }
 }
