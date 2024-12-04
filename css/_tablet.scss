@@ -4,9 +4,15 @@ h1 {
 
 .cart {
   margin-bottom: 40px;
+  
+  .total-order-sum {
+    font-size: 1.1rem;
+  }
 
   .add-order {
     left: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 }
 
