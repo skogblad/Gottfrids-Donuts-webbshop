@@ -11,6 +11,10 @@ const cardOption = document.querySelector("#card");
 const orderBtn = document.querySelector("#order-btn");
 
 //RegEx
+const hasTwoLettersRegEx = new RegExp(/[a-zA-ZåäöÅÄÖ]{2,}/);
+const postalCodeRegEx = new RegExp(/^\d{3}\s?\d{2}$/);
+const emailRegEx = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+const phoneRegEx = new RegExp(/^(\+46|0)[\s\d-]{6,13}$/);
 const personalIdRegEx = new RegExp(/^(\d{10}|\d{12}|\d{6}-\d{4}|\d{8}-\d{4}|\d{8} \d{4}|\d{6} \d{4})/);
 const creditCardNumberRegEx = new RegExp(/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/); //MasterCard
 
@@ -273,7 +277,7 @@ function updateAndPrintCart () {
      <span>Vi kommer leverera din beställning inom 5 arbetsdagar. Totalsumma för beställning: ${(finalOrderSum)} kr.</span>
    `;
     resetCart();
- }
+  }
 }
 
 //Lägg till helgpåslag 15% på ord. priset på alla produkter
@@ -460,7 +464,7 @@ function activateOrderButton () {
   let month = Number(creditCardMonth.value);
   const today = new Date();
   const shortYear = Number(String(today.getFullYear()).substring(2));
-
+  
   if (selectedPaymentOption === "card") {
     //Kolla kortnummer
     if (creditCardNumberRegEx.exec(creditCardNumber.value) === null) {
@@ -485,12 +489,12 @@ function activateOrderButton () {
       console.warn("Cvc är fel");
       return;
     }
-
-    if (selectedPaymentOption === "invoice" && !isPersonalIdNumberValid()) {
-      return;
-    } 
   }
 
+  if (selectedPaymentOption === "invoice" && !isPersonalIdNumberValid()) {
+    return;
+  }
+   
   orderBtn.removeAttribute("disabled");
 }
 
@@ -523,3 +527,81 @@ function customerSlowMessage() {
   alert("Din session har gått ut, fyll i dina uppgifter igen.");
   orderForm.reset();
 }
+
+//--------Validering av beställningsformulär--------
+//Förnamn
+const firstNameInput = document.getElementById("first-name");
+const firstNameError = document.getElementById("first-name-error");
+firstNameInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(firstNameInput.value)) {
+    firstNameError.innerHTML = "";
+  } else {
+    firstNameError.innerHTML = "Fyll i förnamn";
+  }
+});
+
+//Efternamn
+const lastNameInput = document.getElementById("last-name");
+const lastNameError = document.getElementById("last-name-error");
+lastNameInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(lastNameInput.value)) {
+    lastNameError.innerHTML = "";
+  } else {
+    lastNameError.innerHTML = "Fyll i efternamn";
+  }
+});
+
+//Adress
+const addressInput = document.getElementById("address");
+const addressError = document.getElementById("address-error");
+addressInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(addressInput.value)) {
+    addressError.innerHTML = "";
+  } else {
+    addressError.innerHTML = "Ogiltig adress";
+  }
+});
+
+//Postnummer
+const postalCodeInput = document.getElementById("postal-code");
+const postalCodeError = document.getElementById("postal-code-error");
+postalCodeInput.addEventListener("change", () => {
+  if (postalCodeRegEx.test(postalCodeInput.value)) {
+    postalCodeError.innerHTML = "";
+  } else {
+    postalCodeError.innerHTML = "Ogiltigt postnummer";
+  }
+});
+
+//Postort
+const cityInput = document.getElementById("city");
+const cityError = document.getElementById("city-error");
+cityInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(cityInput.value)) {
+    cityError.innerHTML = "";
+  } else {
+    cityError.innerHTML = "Ogiltig postort";
+  }
+});
+
+//Email
+const emailInput = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+emailInput.addEventListener("change", () => {
+  if (emailRegEx.exec(emailInput.value)) {
+  emailError.innerHTML = "";
+  } else {
+  emailError.innerHTML = "Ogiltig email";
+  }
+});
+
+//Telefon
+const phoneInput = document.getElementById("phone");
+const phoneError = document.getElementById("phone-error");
+phoneInput.addEventListener("change", () => {
+  if (phoneRegEx.exec(phoneInput.value)) {
+ phoneError.innerHTML = "";
+  } else {
+  phoneError.innerHTML = "Ogiltigt telefonnummer";
+  }
+});
