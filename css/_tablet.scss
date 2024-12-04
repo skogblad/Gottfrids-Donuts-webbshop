@@ -1,7 +1,40 @@
-.product {
-  grid-column: span 4;
+h1 {
+  font-size: 2.5rem;
+}
+
+.cart {
+  margin-bottom: 40px;
+
+  .add-order {
+    left: 0;
+  }
 }
 
 main h2 {
   display: inline;
+  font-size: 1.8rem;
+  margin-left: 10px;
+}
+
+.sort {
+  top: -10px;
+
+  .material-symbols-outlined {
+    font-size: 1.2rem;
+  }
+
+  .sort-price, 
+  .sort-rating, 
+  .sort-alpha, 
+  .sort-category {
+    padding-inline: 4px;
+  }
+}
+
+.product {
+  grid-column: span 4;
+    
+  img {
+    height: 55%;
+  }
 }
