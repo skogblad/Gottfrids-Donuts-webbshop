@@ -236,9 +236,11 @@ function updateAndPrintCart () {
     msg += "<p>Måndagsrabatt: 10 % på hela beställningen</p>";
   }
 
+  const finalOrderSum = (totalOrderSum + shippingFee).toFixed(2);
+
   cart.innerHTML += `<p>Summa: ${totalOrderSum.toFixed(2)} kr</p>`;
   cart.innerHTML += `<p>Frakt: ${shippingFee.toFixed(2)} kr</p>`;
-  cart.innerHTML += `<strong class="total-order-sum" id="total-order-sum">Totalt ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
+  cart.innerHTML += `<strong class="final-order-sum" id="final-order-sum">Totalt ${(finalOrderSum)} kr</strong>`;
   cart.innerHTML += `<div>${msg}</div>`;
   cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
   
@@ -247,7 +249,7 @@ function updateAndPrintCart () {
   }
 
   //Ta bort faktura som betalsätt totalsumme på 800kr eller mer
-  if (totalOrderSum + shippingFee >= 800) {
+  if (finalOrderSum >= 800) {
     document.getElementById("invoice-payment-option").disabled=true;
     personalId.disabled=true;
   } else {
@@ -257,11 +259,21 @@ function updateAndPrintCart () {
 
   //Totalbelopp i beställningsformuläret
   if (purchasedProducts.length >= 1) {
-    finalAmount.innerHTML = `<strong>Totalbelopp: ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
+    finalAmount.innerHTML = `<strong>Totalbelopp: ${(finalOrderSum)} kr</strong>`;
   } else {
     finalAmount.innerHTML = `<strong>Totalbelopp: 0 kr</strong>`;
   }
   
+  //Få fram bekräftelseruta vid tryck på "Beställ"-knapp
+  const orderConfirmation = document.querySelector("#order-confirmation");
+  orderBtn.addEventListener("click",showOrderConfirmation);
+  function showOrderConfirmation() {
+    orderConfirmation.innerHTML = `
+     <h3>Tack för din beställning!</h3>
+     <span>Vi kommer leverera din beställning inom 5 arbetsdagar. Totalsumma för beställning: ${(finalOrderSum)} kr.</span>
+   `;
+    resetCart();
+ }
 }
 
 //Lägg till helgpåslag 15% på ord. priset på alla produkter
