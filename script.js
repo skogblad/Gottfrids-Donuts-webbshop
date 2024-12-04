@@ -245,7 +245,7 @@ function updateAndPrintCart () {
 
   cart.innerHTML += `<p>Summa: ${totalOrderSum.toFixed(2)} kr</p>`;
   cart.innerHTML += `<p>Frakt: ${shippingFee.toFixed(2)} kr</p>`;
-  cart.innerHTML += `<strong>Totalt ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
+  cart.innerHTML += `<strong class="total-order-sum" id="total-order-sum">Totalt ${(totalOrderSum + shippingFee).toFixed(2)} kr</strong>`;
   cart.innerHTML += `<div>${msg}</div>`;
   cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
   
