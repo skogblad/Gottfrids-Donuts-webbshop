@@ -273,9 +273,11 @@ function updateAndPrintCart () {
   orderBtn.addEventListener("click",showOrderConfirmation);
   function showOrderConfirmation() {
     orderConfirmation.innerHTML = `
-     <h3>Tack för din beställning!</h3>
-     <span>Vi kommer leverera din beställning inom 5 arbetsdagar. Totalsumma för beställning: ${(finalOrderSum)} kr.</span>
-   `;
+      <article>
+      <h3>Tack för din beställning!</h3>
+      Vi kommer leverera din beställning inom 5 arbetsdagar. Totalsumma för beställning: ${(finalOrderSum)} kr.
+      </article>
+    `;
     resetCart();
   }
 }

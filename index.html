@@ -109,7 +109,7 @@
 
         <label>
           <span>Rabattkod</span>
-          <input type="text" checked>
+          <input type="text">
           <span class="error" id="discount-error"></span>
         </label>
 
@@ -143,9 +143,11 @@
             </label>
             <label>
               <span>Datum</span>
-              <span>
-              <input type="number" class="small" placeholder="YY" id="credit-card-year">/<input type="number" class="small" placeholder="MM" id="credit-card-month">
-              </span>
+                <input type="number" class="small" placeholder="YY" id="credit-card-year">
+            </label>
+            <label>
+              <span>/</span>
+              <input type="number" class="small" placeholder="MM" id="credit-card-month">
             </label>
             <label>
               <span>CVC</span>
@@ -172,10 +174,9 @@
         </div>
       </form>
 
-      <article class="order-confirmation" id="order-confirmation">
+      <div class="order-confirmation" id="order-confirmation">
         <!--fyll på med javascript-->
-      </article>
-
+      </div>
     </section>
 
     <address>
