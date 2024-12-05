@@ -538,9 +538,9 @@ const emailInput = document.getElementById("email");
 const emailError = document.getElementById("email-error");
 emailInput.addEventListener("change", () => {
   if (emailRegEx.exec(emailInput.value)) {
-  emailError.innerHTML = "";
+    emailError.innerHTML = "";
   } else {
-  emailError.innerHTML = "Ogiltig email";
+    emailError.innerHTML = "Ogiltig email";
   }
 });
 function isEmailValid () {
@@ -552,15 +552,24 @@ const phoneInput = document.getElementById("phone");
 const phoneError = document.getElementById("phone-error");
 phoneInput.addEventListener("change", () => {
   if (phoneRegEx.exec(phoneInput.value)) {
- phoneError.innerHTML = "";
+    phoneError.innerHTML = "";
   } else {
-  phoneError.innerHTML = "Ogiltigt telefonnummer";
+    phoneError.innerHTML = "Ogiltigt telefonnummer";
   }
 });
 function isPhoneValid () {
   return phoneRegEx.exec(phoneInput.value);
 }
 
+//Personnummer
+const personalIdError = document.getElementById("personal-id-error");
+personalId.addEventListener("change", () => {
+  if (personalIdRegEx.exec(personalId.value)) {
+    personalIdError.innerHTML = "";
+  } else {
+    personalIdError.innerHTML = "Ogiltigt personnummer";
+  }
+});
 function isPersonalIdNumberValid () {
   return personalIdRegEx.exec(personalId.value);
 }
