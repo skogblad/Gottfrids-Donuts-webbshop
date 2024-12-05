@@ -363,12 +363,19 @@ function increaseProductCount(e) { //hitta rätt knapp som klickats på med hjä
   //Hittar produkten i listan och ökar värdet med 1. [foundProductIndex] säger vilken plats den har
   products[foundProductIndex].amount += 1;
 
+  
   //Skriv ut produktlistan på nytt
   printProductsList();
 
   document.querySelector(`#${clickedIncreaseBtnId}`).focus();
 
   updateAndPrintCart();
+  
+  //Ger en grön färgskiftning på totaltsumman i varukorgen vid ökat antal
+  document.querySelector("#final-order-sum").style.color = "green";
+  setTimeout(() => {
+    document.querySelector("#final-order-sum").style.color = "";
+  }, 400);
 }
 
 //Funktion för minska-knappen ska fungera:
@@ -395,6 +402,12 @@ function decreaseProductCount(e) {
   document.querySelector(`#${clickedDecreaseBtnId}`).focus();
 
   updateAndPrintCart();
+
+  //Ger en röd färgskiftning på totaltsumman i varukorgen vid minskat antal
+  document.querySelector("#final-order-sum").style.color = "red";
+  setTimeout(() => {
+    document.querySelector("#final-order-sum").style.color = "";
+  }, 400);
 }
 
 //----------------------------- Sortering av munkar -----------------------------
