@@ -449,9 +449,104 @@ function switchPaymentMethod (e) {
   selectedPaymentOption = e.target.value;
 }
 
-//Dubbelkolla att betalningssätt är korrekt ifyllt och då aktivera "Beställ"-knappen
-personalId.addEventListener("focusout", activateOrderButton);
-personalId.addEventListener("change", activateOrderButton);
+//Validering av beställningsformulär & aktivera "Beställ"-knapp
+//Förnamn
+const firstNameInput = document.getElementById("first-name");
+const firstNameError = document.getElementById("first-name-error");
+firstNameInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(firstNameInput.value)) {
+    firstNameError.innerHTML = "";
+  } else {
+    return firstNameError.innerHTML = "Fyll i förnamn";
+  }
+});
+function isFirstNameValid () {
+  return hasTwoLettersRegEx.exec(firstNameInput.value);
+}
+
+//Efternamn
+const lastNameInput = document.getElementById("last-name");
+const lastNameError = document.getElementById("last-name-error");
+lastNameInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(lastNameInput.value)) {
+    lastNameError.innerHTML = "";
+  } else {
+    lastNameError.innerHTML = "Fyll i efternamn";
+  }
+});
+function isLastNameValid () {
+  return hasTwoLettersRegEx.exec(lastNameInput.value);
+}
+
+//Adress
+const addressInput = document.getElementById("address");
+const addressError = document.getElementById("address-error");
+addressInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(addressInput.value)) {
+    addressError.innerHTML = "";
+  } else {
+    addressError.innerHTML = "Ogiltig adress";
+  }
+});
+function isAddressValid () {
+  return hasTwoLettersRegEx.exec(addressInput.value);
+}
+
+//Postnummer
+const postalCodeInput = document.getElementById("postal-code");
+const postalCodeError = document.getElementById("postal-code-error");
+postalCodeInput.addEventListener("change", () => {
+  if (postalCodeRegEx.test(postalCodeInput.value)) {
+    postalCodeError.innerHTML = "";
+  } else {
+    postalCodeError.innerHTML = "Ogiltigt postnummer";
+  }
+});
+function isPostalCodeValid () {
+  return postalCodeRegEx.exec(postalCodeInput.value);
+}
+
+//Postort
+const cityInput = document.getElementById("city");
+const cityError = document.getElementById("city-error");
+cityInput.addEventListener("change", () => {
+  if (hasTwoLettersRegEx.test(cityInput.value)) {
+    cityError.innerHTML = "";
+  } else {
+    cityError.innerHTML = "Ogiltig postort";
+  }
+});
+function isCityValid () {
+  return hasTwoLettersRegEx.exec(cityInput.value);
+}
+
+//Email
+const emailInput = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+emailInput.addEventListener("change", () => {
+  if (emailRegEx.exec(emailInput.value)) {
+  emailError.innerHTML = "";
+  } else {
+  emailError.innerHTML = "Ogiltig email";
+  }
+});
+function isEmailValid () {
+  return emailRegEx.exec(emailInput.value);
+}
+
+//Telefon
+const phoneInput = document.getElementById("phone");
+const phoneError = document.getElementById("phone-error");
+phoneInput.addEventListener("change", () => {
+  if (phoneRegEx.exec(phoneInput.value)) {
+ phoneError.innerHTML = "";
+  } else {
+  phoneError.innerHTML = "Ogiltigt telefonnummer";
+  }
+});
+function isPhoneValid () {
+  return phoneRegEx.exec(phoneInput.value);
+}
 
 function isPersonalIdNumberValid () {
   return personalIdRegEx.exec(personalId.value);
@@ -464,7 +559,11 @@ function activateOrderButton () {
   let month = Number(creditCardMonth.value);
   const today = new Date();
   const shortYear = Number(String(today.getFullYear()).substring(2));
-  
+
+  if (!isFirstNameValid() || !isLastNameValid() || !isAddressValid() || !isPostalCodeValid() ||!isCityValid() || !isEmailValid() || !isPhoneValid()) {
+    return;
+  }
+
   if (selectedPaymentOption === "card") {
     //Kolla kortnummer
     if (creditCardNumberRegEx.exec(creditCardNumber.value) === null) {
@@ -498,11 +597,13 @@ function activateOrderButton () {
   orderBtn.removeAttribute("disabled");
 }
 
+personalId.addEventListener("focusout", activateOrderButton);
 creditCardNumber.addEventListener("focusout", activateOrderButton);
 creditCardYear.addEventListener("focusout", activateOrderButton);
 creditCardMonth.addEventListener("focusout", activateOrderButton);
 creditCardCvc.addEventListener("focusout", activateOrderButton);
 
+personalId.addEventListener("change", activateOrderButton);
 creditCardNumber.addEventListener("change", activateOrderButton);
 creditCardYear.addEventListener("change", activateOrderButton);
 creditCardMonth.addEventListener("change", activateOrderButton);
@@ -527,81 +628,3 @@ function customerSlowMessage() {
   alert("Din session har gått ut, fyll i dina uppgifter igen.");
   orderForm.reset();
 }
-
-//--------Validering av beställningsformulär--------
-//Förnamn
-const firstNameInput = document.getElementById("first-name");
-const firstNameError = document.getElementById("first-name-error");
-firstNameInput.addEventListener("change", () => {
-  if (hasTwoLettersRegEx.test(firstNameInput.value)) {
-    firstNameError.innerHTML = "";
-  } else {
-    firstNameError.innerHTML = "Fyll i förnamn";
-  }
-});
-
-//Efternamn
-const lastNameInput = document.getElementById("last-name");
-const lastNameError = document.getElementById("last-name-error");
-lastNameInput.addEventListener("change", () => {
-  if (hasTwoLettersRegEx.test(lastNameInput.value)) {
-    lastNameError.innerHTML = "";
-  } else {
-    lastNameError.innerHTML = "Fyll i efternamn";
-  }
-});
-
-//Adress
-const addressInput = document.getElementById("address");
-const addressError = document.getElementById("address-error");
-addressInput.addEventListener("change", () => {
-  if (hasTwoLettersRegEx.test(addressInput.value)) {
-    addressError.innerHTML = "";
-  } else {
-    addressError.innerHTML = "Ogiltig adress";
-  }
-});
-
-//Postnummer
-const postalCodeInput = document.getElementById("postal-code");
-const postalCodeError = document.getElementById("postal-code-error");
-postalCodeInput.addEventListener("change", () => {
-  if (postalCodeRegEx.test(postalCodeInput.value)) {
-    postalCodeError.innerHTML = "";
-  } else {
-    postalCodeError.innerHTML = "Ogiltigt postnummer";
-  }
-});
-
-//Postort
-const cityInput = document.getElementById("city");
-const cityError = document.getElementById("city-error");
-cityInput.addEventListener("change", () => {
-  if (hasTwoLettersRegEx.test(cityInput.value)) {
-    cityError.innerHTML = "";
-  } else {
-    cityError.innerHTML = "Ogiltig postort";
-  }
-});
-
-//Email
-const emailInput = document.getElementById("email");
-const emailError = document.getElementById("email-error");
-emailInput.addEventListener("change", () => {
-  if (emailRegEx.exec(emailInput.value)) {
-  emailError.innerHTML = "";
-  } else {
-  emailError.innerHTML = "Ogiltig email";
-  }
-});
-
-//Telefon
-const phoneInput = document.getElementById("phone");
-const phoneError = document.getElementById("phone-error");
-phoneInput.addEventListener("change", () => {
-  if (phoneRegEx.exec(phoneInput.value)) {
- phoneError.innerHTML = "";
-  } else {
-  phoneError.innerHTML = "Ogiltigt telefonnummer";
-  }
-});
