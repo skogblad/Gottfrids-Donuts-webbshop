@@ -69,12 +69,71 @@ main h2 {
     width: 90px;
   }
 
+  .approve-info {
+    width: 341px;
+  }
+
   .approve-info span {
-    width: 217px;
+    width: 225px;
+  }
+
+  .newsletter {
+    width: 341px;
   }
 
   .newsletter span {
-    width: 217px;
+    width: 225px;
+  }
+
+  .payment-option {
+    width: 341px;
+    background-color: rgb(166, 201, 202);
+    border-radius: 8px;
+    border: 1px solid rgb(124, 163, 164);
+
+    .selector {
+      margin: 5px;
+    }
+  }
+
+  .card {
+    margin: 5px;
+  }
+}
+
+
+.card-number-label,
+.cvc-label,
+.card-date {
+  display: flex;
+  gap: 8px;
+  margin-block: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-date {
+  margin: 0;
+}
+
+.card-date-year {
+  display: flex;
+  width: 279.55px;
+  justify-content: space-between;
+}
+
+.small {
+  width: 33px;
+  display: inline-flex;
+}
+
+.order-confirmation {
+  font-size: 1rem;
+  padding-bottom: 20px;
+
+  h3 {
+    font-size: 1.3rem;
+    justify-self: center;
   }
 }
 
