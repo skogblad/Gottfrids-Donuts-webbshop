@@ -16,11 +16,19 @@ h1 {
   }
 }
 
+.horizontal-line {
+  border-bottom: 1px solid rgb(151, 148, 148);
+  width: 100%;
+}
+
+.shipping-cost {
+  font-style: italic;
+}
+
 main h2 {
   justify-self: center;
   font-size: 1.4rem;
   padding-top: 15px;
-
 }
 
 .sort {
@@ -94,7 +102,7 @@ main h2 {
 
     .selector {
       margin: 5px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
 
       span {
         font-weight: bold;
@@ -110,7 +118,6 @@ main h2 {
     margin: 5px
   }
 }
-
 
 .card-number-label,
 .cvc-label,
