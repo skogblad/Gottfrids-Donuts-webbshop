@@ -87,17 +87,26 @@ main h2 {
 
   .payment-option {
     width: 341px;
-    background-color: rgb(166, 201, 202);
+    background-color: rgb(184, 198, 199);
     border-radius: 8px;
     border: 1px solid rgb(124, 163, 164);
 
     .selector {
       margin: 5px;
+      font-size: 1.1rem;
+
+      span {
+        font-weight: bold;
+      }
     }
   }
 
   .card {
     margin: 5px;
+  }
+
+  .invoice {
+    margin: 5px
   }
 }
 
@@ -127,6 +136,22 @@ main h2 {
   display: inline-flex;
 }
 
+.personal-id-label {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 8px;
+
+  input {
+    width: 100px;
+  }
+}
+
+.reset,
+.order {
+  padding-inline: 5px;
+  padding-block: 2px;
+}
+
 .order-confirmation {
   font-size: 1rem;
   padding-bottom: 20px;
@@ -151,7 +176,6 @@ address {
     font-style: normal;
     padding-left: 40px;
     padding-bottom: 10px;
-    font-size: 1rem;
 
     .material-symbols-outlined {
       position: absolute;
