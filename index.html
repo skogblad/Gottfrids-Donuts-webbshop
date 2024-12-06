@@ -141,6 +141,7 @@
               <span>Kortnummer</span>
               <input type="number" id="credit-card-number"> 
             </label>
+
             <div class="card-date">
               <label class="card-date-year">
                 <span>Datum</span>
@@ -151,19 +152,20 @@
                 <input type="number" class="small" placeholder="MM" id="credit-card-month">
               </label>
             </div>
+
             <label class="cvc-label">
               <span>CVC</span>
               <input type="number" placeholder="123" id="credit-card-cvc">
             </label>
           </div>
-        </div>
 
-        <div class="invoice hidden" id="invoice">
-          <label>
-            <span>Personnummer</span>
-            <input type="text" name="personal-id" id="personal-id">
-            <span class="error" id="personal-id-error"></span>
-          </label>
+          <div class="invoice hidden" id="invoice">
+            <label class="personal-id-label">
+              <span>Personnummer</span>
+              <input type="text" name="personal-id" id="personal-id">
+              <span class="error" id="personal-id-error"></span>
+            </label>
+          </div>
         </div>
 
         <div class="final-amount" id="final-amount"> 
