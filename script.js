@@ -152,7 +152,7 @@ const products = [
     id: 4,
     price: 20,
     rating: 3,
-    category: "Choklad",
+    category: "Fylld",
     amount: 0,
     img: {
       url: "assets/photos/Chokladmunk.jpeg",
