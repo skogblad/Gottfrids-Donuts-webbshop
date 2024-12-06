@@ -85,7 +85,7 @@ const products = [
     category: "Choklad",
     amount: 0,
     img: {
-      url: "assets/photos/chokladkokos.jpeg",
+      url: "../assets/photos/chokladkokos.jpeg",
       width: 500,
       height: 508,
       alt: "Munk med ett överdrag av chokladfrosting och kokosflingor."
@@ -183,7 +183,7 @@ const products = [
     category: "Fylld",
     amount: 0,
     img: {
-      url: "assets/photos/appelmunk.jpeg",
+      url: "assets/photos/Appelmunk.jpeg",
       width: 500,
       height: 500,
       alt: "Fylld munk med ett överdrag av socker."
