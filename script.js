@@ -78,20 +78,6 @@ const products = [
     },        
   },
   {
-    name: "Chokladkokos",
-    id: 4,
-    price: 20,
-    rating: 3,
-    category: "Choklad",
-    amount: 0,
-    img: {
-      url: "assets/photos/Chokladkokos.jpeg",
-      width: 500,
-      height: 508,
-      alt: "Munk med ett överdrag av chokladfrosting och kokosflingor."
-    },        
-  },
-  {
     name: "Saltkaramell",
     id: 5,
     price: 20,
@@ -160,6 +146,20 @@ const products = [
       height: 500,
       alt: "Munk med ett överdrag av socker."
     },        
+  },
+  {
+    name: "Chokladmunk",
+    id: 4,
+    price: 20,
+    rating: 3,
+    category: "Choklad",
+    amount: 0,
+    img: {
+      url: "assets/photos/Chokladmunk.jpeg",
+      width: 500,
+      height: 474,
+      alt: "Munk med ett topp-överdrag av chokladfrosting och kokosflingor."
+    },
   },
   {
     name: "Hallonmunk",
