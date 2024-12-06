@@ -243,7 +243,8 @@ function updateAndPrintCart () {
   const finalOrderSum = (totalOrderSum + shippingFee).toFixed(2);
 
   cart.innerHTML += `<p>Summa: ${totalOrderSum.toFixed(2)} kr</p>`;
-  cart.innerHTML += `<p>Frakt: ${shippingFee.toFixed(2)} kr</p>`;
+  cart.innerHTML += `<div class="horizontal-line"></div>`;
+  cart.innerHTML += `<p class="shipping-cost">Frakt: ${shippingFee.toFixed(2)} kr</p>`;
   cart.innerHTML += `<strong class="final-order-sum" id="final-order-sum">Totalt ${(finalOrderSum)} kr</strong>`;
   cart.innerHTML += `<div>${msg}</div>`;
   cart.innerHTML += `<button class="add-order"><a href="#place-order">Lägg beställning</a></button>`;
