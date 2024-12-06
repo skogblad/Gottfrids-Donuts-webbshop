@@ -40,12 +40,17 @@ main h2 {
   }
 }
 
+.selector span {
+  font-size: 1.1rem;
+}
+
 .place-order label,
 .place-order input,
 .payment-option,
 .payment-option input {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
-
-
+.personal-id-label input {
+  width: 140px;
+}
