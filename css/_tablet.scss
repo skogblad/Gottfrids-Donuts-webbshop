@@ -53,3 +53,10 @@ main h2 {
 .small {
   width: 50px;
 }
+
+.reset,
+.order {
+  cursor: pointer;
+  padding-inline: 5px;
+  padding-block: 3px;
+}
