@@ -60,7 +60,8 @@ const products = [
       url: "assets/photos/Sockersot.jpeg",
       width: 500,
       height: 500,
-      alt: "Munk med ett överdrag socker."
+      alt: "Munk med ett överdrag socker.",
+      loading: "lazy"
     },        
   },
   {
@@ -74,7 +75,8 @@ const products = [
       url: "assets/photos/Citrondrom.jpeg",
       width: 500,
       height: 497,
-      alt: "Munk med ett topp-överdrag av vit frosting och citron-crunch."
+      alt: "Munk med ett topp-överdrag av vit frosting och citron-crunch.",
+      loading: "lazy"
     },        
   },
   {
@@ -88,7 +90,8 @@ const products = [
       url: "assets/photos/Saltkaramell.jpeg",
       width: 500,
       height: 485,
-      alt: "Munk med ett överdrag av vit frosting och linjer av karamell."
+      alt: "Munk med ett överdrag av vit frosting och linjer av karamell.",
+      loading: "lazy"
     },        
   },
   {
@@ -102,7 +105,8 @@ const products = [
       url: "assets/photos/Mango.jpeg",
       width: 500,
       height: 500,
-      alt: "Munk med ett topp-överdrag av gul frosting och pärlströssel i gult, orange och rosa."
+      alt: "Munk med ett topp-överdrag av gul frosting och pärlströssel i gult, orange och rosa.",
+      loading: "lazy"
     },        
   },
   {
@@ -116,7 +120,8 @@ const products = [
       url: "assets/photos/Chokladkrisp.jpeg",
       width: 500,
       height: 500,
-      alt: "Munk med ett överdrag av choklad och chokladgodisar."
+      alt: "Munk med ett överdrag av choklad och chokladgodisar.",
+      loading: "lazy"
     },        
   },
   {
@@ -130,7 +135,8 @@ const products = [
       url: "assets/photos/Vitchoklad.jpeg",
       width: 500,
       height: 500,
-      alt: "Munk med ett överdrag av vitchoklad och mönster av mjölkchoklad."
+      alt: "Munk med ett överdrag av vitchoklad och mönster av mjölkchoklad.",
+      loading: "lazy"
     },        
   },
   {
@@ -144,7 +150,8 @@ const products = [
       url: "assets/photos/Saffran.jpeg",
       width: 500,
       height: 500,
-      alt: "Munk med ett överdrag av socker."
+      alt: "Munk med ett överdrag av socker.",
+      loading: "lazy"
     },        
   },
   {
@@ -158,7 +165,8 @@ const products = [
       url: "assets/photos/Chokladmunk.jpeg",
       width: 500,
       height: 474,
-      alt: "Munk med ett topp-överdrag av chokladfrosting och kokosflingor."
+      alt: "Munk med ett topp-överdrag av chokladfrosting och kokosflingor.",
+      loading: "lazy"
     },
   },
   {
@@ -172,7 +180,8 @@ const products = [
       url: "assets/photos/Hallonmunk.jpeg",
       width: 500,
       height: 474,
-      alt: "En halv munk med halloninnehåll bredvid en hel, fyllig munk."
+      alt: "En halv munk med halloninnehåll bredvid en hel, fyllig munk.",
+      loading: "lazy"
     },        
   },
   {
@@ -186,7 +195,8 @@ const products = [
       url: "assets/photos/Appelmunk.jpeg",
       width: 500,
       height: 500,
-      alt: "Fylld munk med ett överdrag av socker."
+      alt: "Fylld munk med ett överdrag av socker.",
+      loading: "lazy"
     },        
   },
 ];
