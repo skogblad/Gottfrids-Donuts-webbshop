@@ -29,7 +29,7 @@ const products = [
     category: "Choklad",
     amount: 0,
     img: {
-      url: "assets/photos/chokladdrom.jpeg",
+      url: "assets/photos/Chokladdrom.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett topp-överdrag av mjölkchoklad och småbitar av nötter."
@@ -43,7 +43,7 @@ const products = [
     category: "Vegansk",
     amount: 0,
     img: {
-      url: "assets/photos/jordgubb.jpeg",
+      url: "assets/photos/Jordgubb.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett topp-överdrag av rosa jordgubbsfrosting och strössel."
@@ -57,7 +57,7 @@ const products = [
     category: "Bästsäljare",
     amount: 0,
     img: {
-      url: "assets/photos/sockersot.jpeg",
+      url: "assets/photos/Sockersot.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett överdrag socker."
@@ -71,7 +71,7 @@ const products = [
     category: "Bästsäljare",
     amount: 0,
     img: {
-      url: "assets/photos/citrondrom.jpeg",
+      url: "assets/photos/Citrondrom.jpeg",
       width: 500,
       height: 497,
       alt: "Munk med ett topp-överdrag av vit frosting och citron-crunch."
@@ -85,7 +85,7 @@ const products = [
     category: "Choklad",
     amount: 0,
     img: {
-      url: "../assets/photos/chokladkokos.jpeg",
+      url: "assets/photos/Chokladkokos.jpeg",
       width: 500,
       height: 508,
       alt: "Munk med ett överdrag av chokladfrosting och kokosflingor."
@@ -99,7 +99,7 @@ const products = [
     category: "Bästsäljare",
     amount: 0,
     img: {
-      url: "assets/photos/saltkaramell.jpeg",
+      url: "assets/photos/Saltkaramell.jpeg",
       width: 500,
       height: 485,
       alt: "Munk med ett överdrag av vit frosting och linjer av karamell."
@@ -113,7 +113,7 @@ const products = [
     category: "Vegansk",
     amount: 0,
     img: {
-      url: "assets/photos/mango.jpeg",
+      url: "assets/photos/Mango.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett topp-överdrag av gul frosting och pärlströssel i gult, orange och rosa."
@@ -127,7 +127,7 @@ const products = [
     category: "Choklad",
     amount: 0,
     img: {
-      url: "assets/photos/chokladkrisp.jpeg",
+      url: "assets/photos/Chokladkrisp.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett överdrag av choklad och chokladgodisar."
@@ -141,7 +141,7 @@ const products = [
     category: "Choklad",
     amount: 0,
     img: {
-      url: "assets/photos/vitchoklad.jpeg",
+      url: "assets/photos/Vitchoklad.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett överdrag av vitchoklad och mönster av mjölkchoklad."
@@ -155,7 +155,7 @@ const products = [
     category: "Vegansk",
     amount: 0,
     img: {
-      url: "assets/photos/saffran.jpeg",
+      url: "assets/photos/Saffran.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett överdrag av socker."
@@ -169,7 +169,7 @@ const products = [
     category: "Fylld",
     amount: 0,
     img: {
-      url: "assets/photos/hallonmunk.jpeg",
+      url: "assets/photos/Hallonmunk.jpeg",
       width: 500,
       height: 474,
       alt: "En halv munk med halloninnehåll bredvid en hel, fyllig munk."
