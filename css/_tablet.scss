@@ -50,6 +50,39 @@ main h2 {
   font-size: 1.1rem;
 }
 
+.place-order > label {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.place-order {
+  .approve-info,
+  .newsletter {
+    width: 500px;
+    justify-content: left;
+
+    span {
+      width: 430px;
+    }
+  }  
+
+  .checkbox-approve-info,
+  .checkbox-newsletter {
+    transform: scale(1.5);
+  }
+
+  .payment-option {
+    margin-top: 15px;
+    width: 400px;
+  }
+}
+
+.card-date-year {
+  width: 320px;
+}
+
 .small {
   width: 50px;
 }
