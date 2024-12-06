@@ -594,8 +594,9 @@ function activateOrderButton () {
   let month = Number(creditCardMonth.value);
   const today = new Date();
   const shortYear = Number(String(today.getFullYear()).substring(2));
+  const checkboxAcceptInfo = document.querySelector("#checkbox-approve-info");
 
-  if (!isFirstNameValid() || !isLastNameValid() || !isAddressValid() || !isPostalCodeValid() ||!isCityValid() || !isEmailValid() || !isPhoneValid()) {
+  if (!isFirstNameValid() || !isLastNameValid() || !isAddressValid() || !isPostalCodeValid() ||!isCityValid() || !isEmailValid() || !isPhoneValid() || !checkboxAcceptInfo.checked) {
     return;
   }
 
