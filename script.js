@@ -29,7 +29,7 @@ const products = [
     category: "Choklad",
     amount: 0,
     img: {
-      url: "../assets/photos/chokladdrom.jpeg",
+      url: "./assets/photos/chokladdrom.jpeg",
       width: 500,
       height: 500,
       alt: "Munk med ett topp-överdrag av mjölkchoklad och småbitar av nötter."
