@@ -1,2 +1,33 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/P54kDXVP)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=17085794&assignment_repo_type=AssignmentRepo)
+
+# Gottfrids Donuts-webbshop
+
+As a part of an assignment during my front end education we created a webshop that sells donuts, with focus on JavaScript. Here we have more or less the full function of buying a donut with different discounts.
+
+
+
+## Demo
+https://medieinstitutet.github.io/fed24d-js-intro-inl-1-webshop-skogblad/
+## Tech Stack
+
+**Client:** HTML, SASS, JavaScript
+
+**Server:** Node.js
+
+
+## Authors
+
+- [@skogblad](https://www.github.com/skogblad)
+
+
+## Screenshots
+HTML validering:
+![Skärmavbild 2024-12-09 kl  13 33 50](https://github.com/user-attachments/assets/82fa5a2d-6d2b-4eab-94a4-b424b5d17d9d)
+
+
+CSS validering:
+![Skärmavbild 2024-12-09 kl  13 43 17](https://github.com/user-attachments/assets/cf268940-5760-450a-a13a-26d65677eaeb)
+
+
+
+
+
