@@ -41,16 +41,39 @@ main h2 {
 }
 
 .selector span {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+}
+
+.place-order h2 {
+  font-size: 2rem;
+}
+.place-order .payment-option {
+  width: 500px;
+}
+
+.card-date-year {
+  width: 417px;
 }
 
 .place-order label,
 .place-order input,
 .payment-option,
 .payment-option input {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .personal-id-label input {
-  width: 140px;
+  width: 150px;
+}
+
+.final-amount {
+  font-size: 1.2rem;
+}
+
+.order-confirmation {
+  font-size: 1.3rem;
+
+  h3 {
+    font-size: 1.4rem;
+  }
 }
