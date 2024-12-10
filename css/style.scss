@@ -1,122 +1,13 @@
-* {
-  box-sizing: border-box;
-}
-
-.hidden {
-  display: none;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h1 {
-  font-family: "Merienda", sans-serif;
-}
-
-.cart {
-  padding: 10px;
-  background-color: rgb(244, 213, 240);
-
-  .add-order {
-    display: block;
-    position: relative;
-    margin-top: 10px;
-    background-color: rgb(255, 255, 255);
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-}
-.sort {
-
-  .sort-price, .sort-rating {
-    margin-inline: 5px;
-  }
-
-  .sort-price, 
-  .sort-rating, 
-  .sort-alpha, 
-  .sort-category {
-    color: rgb(0, 0, 0);
-    background-color: rgb(241, 231, 240);
-    border-style: outset;
-    border-color: rgb(237, 226, 236);
-    cursor: pointer;
-  }
-}
-
-.products-list {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
-
-.product {
-  justify-items: center;
-  text-align: center;
-
-  .category {
-    font-style: italic;
-  }
-
-  .decrease, .increase {
-    background-color: black;
-    color: white;
-  }
-}
-
-footer {
-  background-color: rgb(246, 211, 242);
-}
-
-.place-order {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  row-gap: 10px;
-  justify-items: center;
-  font-size: 1rem;
-  padding-bottom: 20px;
-
-  label {
-    justify-items: center;
-    row-gap: 10px;
-
-    span {
-      display: inline-flex;
-    }
-  }
-}
-
-.order-confirmation {
-  background-color: #805c7c;
-  display: flex;
-  justify-content: center;
-  color: white;
-}
-
-.payment-option label span {
-  display: inline;
-}
-
-.error {
-  color: red;
-  font-size: 1rem;
-}
+@use "_base";
 
 @media screen and (min-width: 375px) {
-  @import "_mobile";
+  @use "_mobile";
 }
 
 @media screen and (min-width: 767px) {
-  @import "_tablet";
+  @use "_tablet";
 }
 
 @media screen and (min-width: 1024px) {
-  @import "_desktop";
+  @use "_desktop";
 }
