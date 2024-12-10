@@ -280,9 +280,11 @@ function updateAndPrintCart () {
   }
   
   //Få fram bekräftelseruta vid tryck på "Beställ"-knapp
-  const orderConfirmation = document.querySelector("#order-confirmation");
   orderBtn.addEventListener("click",showOrderConfirmation);
-  function showOrderConfirmation() {
+  function showOrderConfirmation(e) {
+    e.preventDefault();
+    const orderConfirmation = document.querySelector("#order-confirmation");
+    
     orderConfirmation.innerHTML = `
       <article>
       <h3>Tack för din beställning!</h3>
