@@ -483,7 +483,7 @@ function checkAddedInputFirstName () {
   if (hasTwoLettersRegEx.test(firstNameInput.value)) {
     firstNameError.innerHTML = "";
   } else {
-    return firstNameError.innerHTML = "Fyll i förnamn";
+    return firstNameError.innerHTML = "Ogiltigt förnamn";
   }
 }
 firstNameInput.addEventListener("change", checkAddedInputFirstName);
@@ -498,7 +498,7 @@ function checkAddedInputLastName () {
   if (hasTwoLettersRegEx.test(lastNameInput.value)) {
     lastNameError.innerHTML = "";
   } else {
-    lastNameError.innerHTML = "Fyll i efternamn";
+    lastNameError.innerHTML = "Ogiltigt efternamn";
   }
 }
 lastNameInput.addEventListener("change", checkAddedInputLastName);
