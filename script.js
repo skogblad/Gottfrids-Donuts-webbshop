@@ -479,13 +479,14 @@ function switchPaymentMethod (e) {
 //Förnamn
 const firstNameInput = document.getElementById("first-name");
 const firstNameError = document.getElementById("first-name-error");
-firstNameInput.addEventListener("change", () => {
+function checkAddedInputFirstName () {
   if (hasTwoLettersRegEx.test(firstNameInput.value)) {
     firstNameError.innerHTML = "";
   } else {
     return firstNameError.innerHTML = "Fyll i förnamn";
   }
-});
+}
+firstNameInput.addEventListener("change", checkAddedInputFirstName);
 function isFirstNameValid () {
   return hasTwoLettersRegEx.exec(firstNameInput.value);
 }
@@ -493,13 +494,14 @@ function isFirstNameValid () {
 //Efternamn
 const lastNameInput = document.getElementById("last-name");
 const lastNameError = document.getElementById("last-name-error");
-lastNameInput.addEventListener("change", () => {
+function checkAddedInputLastName () {
   if (hasTwoLettersRegEx.test(lastNameInput.value)) {
     lastNameError.innerHTML = "";
   } else {
     lastNameError.innerHTML = "Fyll i efternamn";
   }
-});
+}
+lastNameInput.addEventListener("change", checkAddedInputLastName);
 function isLastNameValid () {
   return hasTwoLettersRegEx.exec(lastNameInput.value);
 }
@@ -507,13 +509,14 @@ function isLastNameValid () {
 //Adress
 const addressInput = document.getElementById("address");
 const addressError = document.getElementById("address-error");
-addressInput.addEventListener("change", () => {
+function checkAddedInputAddress () {
   if (hasTwoLettersRegEx.test(addressInput.value)) {
     addressError.innerHTML = "";
   } else {
     addressError.innerHTML = "Ogiltig adress";
   }
-});
+}
+addressInput.addEventListener("change", checkAddedInputAddress);
 function isAddressValid () {
   return hasTwoLettersRegEx.exec(addressInput.value);
 }
@@ -521,13 +524,14 @@ function isAddressValid () {
 //Postnummer
 const postalCodeInput = document.getElementById("postal-code");
 const postalCodeError = document.getElementById("postal-code-error");
-postalCodeInput.addEventListener("change", () => {
+function checkAddedInputPostalCode () {
   if (postalCodeRegEx.test(postalCodeInput.value)) {
     postalCodeError.innerHTML = "";
   } else {
     postalCodeError.innerHTML = "Ogiltigt postnummer";
   }
-});
+}
+postalCodeInput.addEventListener("change", checkAddedInputPostalCode);
 function isPostalCodeValid () {
   return postalCodeRegEx.exec(postalCodeInput.value);
 }
@@ -535,13 +539,14 @@ function isPostalCodeValid () {
 //Postort
 const cityInput = document.getElementById("city");
 const cityError = document.getElementById("city-error");
-cityInput.addEventListener("change", () => {
+function checkAddedInputCity () {
   if (hasTwoLettersRegEx.test(cityInput.value)) {
     cityError.innerHTML = "";
   } else {
     cityError.innerHTML = "Ogiltig postort";
   }
-});
+}
+cityInput.addEventListener("change", checkAddedInputCity);
 function isCityValid () {
   return hasTwoLettersRegEx.exec(cityInput.value);
 }
@@ -549,13 +554,14 @@ function isCityValid () {
 //Email
 const emailInput = document.getElementById("email");
 const emailError = document.getElementById("email-error");
-emailInput.addEventListener("change", () => {
+function checkAddedInputEmail () {
   if (emailRegEx.exec(emailInput.value)) {
     emailError.innerHTML = "";
   } else {
     emailError.innerHTML = "Ogiltig email";
   }
-});
+}
+emailInput.addEventListener("change", checkAddedInputEmail);
 function isEmailValid () {
   return emailRegEx.exec(emailInput.value);
 }
@@ -563,26 +569,28 @@ function isEmailValid () {
 //Telefon
 const phoneInput = document.getElementById("phone");
 const phoneError = document.getElementById("phone-error");
-phoneInput.addEventListener("change", () => {
+function checkAddedInputPhone () {
   if (phoneRegEx.exec(phoneInput.value)) {
     phoneError.innerHTML = "";
   } else {
     phoneError.innerHTML = "Ogiltigt telefonnummer";
   }
-});
+}
+phoneInput.addEventListener("change", checkAddedInputPhone);
 function isPhoneValid () {
   return phoneRegEx.exec(phoneInput.value);
 }
 
 //Personnummer
 const personalIdError = document.getElementById("personal-id-error");
-personalId.addEventListener("change", () => {
+function checkAddedInputPersonalId () {
   if (personalIdRegEx.exec(personalId.value)) {
     personalIdError.innerHTML = "";
   } else {
     personalIdError.innerHTML = "Ogiltigt personnummer";
   }
-});
+}
+personalId.addEventListener("change", checkAddedInputPersonalId);
 function isPersonalIdNumberValid () {
   return personalIdRegEx.exec(personalId.value);
 }
