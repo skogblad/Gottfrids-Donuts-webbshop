@@ -81,7 +81,7 @@ footer {
   row-gap: 10px;
   justify-items: center;
   font-size: 1rem;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 
   label {
     justify-items: center;
@@ -96,6 +96,7 @@ footer {
 .order-confirmation {
   background-color: #805c7c;
   color: white;
+  padding-top: 15px;
 }
 
 .payment-option label span {
