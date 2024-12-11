@@ -161,13 +161,10 @@ main h2 {
   margin-inline: 5px;
 }
 
-.order-confirmation {
+.order-confirmation article {
   font-size: 1rem;
-  padding-bottom: 20px;
-
-  article {
-    justify-items: center;
-  }
+  padding-block: 18px;
+  justify-items: center;
 
   span {
     display: block;
