@@ -298,8 +298,10 @@ function updateAndPrintCart () {
 //Lägg till helgpåslag 15% på ord. priset på alla produkter
 function weekendPriceIncrease() {
   const weekend = new Date();
+  const day = weekend.getDay();
+  const hour = weekend.getHours();
 
-  if ((weekend.getDay() === 5 && weekend.getHours() >= 15) || (weekend.getDay() === 1 && weekend.getHours() < 3)) {
+  if ((day === 5 && hour >= 15) || (day === 6) || (day === 0) || (day === 1 && hour < 3)) {
     return 1.15;
   }
   return 1;
