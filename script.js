@@ -287,8 +287,8 @@ function updateAndPrintCart () {
     
     orderConfirmation.innerHTML = `
       <article>
-      <h3>Tack för din beställning!</h3>
-      Vi kommer leverera din beställning inom 5 arbetsdagar. Totalsumma för beställning: ${(finalOrderSum)} kr.
+        <h3>Tack för din beställning!</h3>
+        <span>Vi kommer leverera din beställning inom 5 arbetsdagar. Totalsumma för beställning: ${(finalOrderSum)} kr.</span>
       </article>
     `;
     resetCart();
