@@ -1,13 +1,13 @@
 @use "_base";
 
 @media screen and (min-width: 375px) {
-  @use "_mobile";
+  @import "_mobile";
 }
 
 @media screen and (min-width: 767px) {
-  @use "_tablet";
+  @import "_tablet";
 }
 
 @media screen and (min-width: 1024px) {
-  @use "_desktop";
+  @import "_desktop";
 }
