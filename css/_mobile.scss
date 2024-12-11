@@ -117,6 +117,11 @@ main h2 {
   .invoice {
     margin: 5px
   }
+
+  .error {
+    width: 75px;
+    font-size: 0.8rem;
+  }
 }
 
 .card-number-label,
@@ -174,27 +179,5 @@ main h2 {
   h3 {
     font-size: 1.3rem;
     margin-inline: 20px;
-  }
-}
-
-address {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: rgb(241, 231, 240);
-
-  a {
-    display: flex;
-    color: black;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1rem;
-    font-style: normal;
-    padding-left: 40px;
-    padding-bottom: 10px;
-
-    .material-symbols-outlined {
-      position: absolute;
-      left: 20px; 
-    }    
   }
 }

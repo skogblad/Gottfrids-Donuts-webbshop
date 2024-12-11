@@ -47,12 +47,22 @@ main h2 {
 .place-order h2 {
   font-size: 2rem;
 }
+
+.place-order > label {
+  width: 600px;
+}
+
+.place-order .approve-info,
+.place-order .newsletter {
+  width: 600px;
+}
+
 .place-order .payment-option {
-  width: 500px;
+  width: 600px;
 }
 
 .card-date-year {
-  width: 417px;
+  width: 517px;
 }
 
 .place-order label,
@@ -63,7 +73,7 @@ main h2 {
 }
 
 .personal-id-label input {
-  width: 150px;
+  width: 170px;
 }
 
 .reset,
