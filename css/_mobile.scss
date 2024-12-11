@@ -14,15 +14,15 @@ h1 {
     left: 100px;
     padding-inline: 20px;
   }
+
+  .shipping-cost {
+    font-style: italic;
+  }
 }
 
 .horizontal-line {
   border-bottom: 1px solid rgb(151, 148, 148);
   width: 100%;
-}
-
-.shipping-cost {
-  font-style: italic;
 }
 
 main h2 {
