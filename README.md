@@ -1,7 +1,7 @@
 
 # Gottfrids Donuts-webbshop
 
-As a part of an assignment during my front end education we created a one page webshop that sells donuts, with mainly focus on JavaScript. Here we have more or less the full function of buying a donut with different discounts. 
+As a part of an assignment during my front end education at [Medieinstitutet](https://github.com/medieinstitutet) we created a one page webshop that sells donuts, with mainly focus on JavaScript. Here we have more or less the full function of buying a donut with different discounts. 
 
 *Few selected aspects:*
 1. On Mondays before 10 am: 10% discount.
@@ -14,7 +14,7 @@ As a part of an assignment during my front end education we created a one page w
 
 
 ## Demo
-https://medieinstitutet.github.io/fed24d-js-intro-inl-1-webshop-skogblad/
+https://skogblad.github.io/Gottfrids-Donuts-webbshop/
 
 ## Tech Stack
 
