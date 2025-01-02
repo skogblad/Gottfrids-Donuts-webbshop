@@ -14,7 +14,7 @@ As a part of an assignment during my front end education at [Medieinstitutet](ht
 
 
 ## Demo
-https://skogblad.github.io/Gottfrids-Donuts-webbshop/
+[Link to live version](https://skogblad.github.io/Gottfrids-Donuts-webbshop/)
 
 ## Tech Stack
 
