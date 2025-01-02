@@ -35,12 +35,12 @@ As a part of an assignment during my front end education at [Medieinstitutet](ht
 
 <br>
 
-**HTML validering:**
+**HTML validation:**
 ![HTML_validation](https://github.com/user-attachments/assets/458b16cd-6c06-4c56-8abb-0084a41e811b)
 
 <br>
 
-**CSS validering:**
+**CSS validation:**
 ![CSS_validation](https://github.com/user-attachments/assets/ec1aa608-d0bc-413f-a4d7-fdc34f3a56f3)
 
 
