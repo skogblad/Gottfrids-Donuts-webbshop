@@ -30,8 +30,8 @@ As a part of an assignment during my front end education at [Medieinstitutet](ht
 
 ## Screenshot
 
-![file](https://github.com/user-attachments/assets/1c163afd-aa4a-4ff3-908f-3ea2eeb2e26f)
-![file (kopia)](https://github.com/user-attachments/assets/b3779dc4-8a37-4df3-bcf8-c669c9215839)
+![Gottfrid_Donuts](https://github.com/user-attachments/assets/b3bb0713-d2a5-4449-93a0-f247e4c87a35)
+![Gottfrids-Donuts-2](https://github.com/user-attachments/assets/f14f50be-8614-4d9d-809f-661c3a89935e)
 
 ## Tech Stack
 
