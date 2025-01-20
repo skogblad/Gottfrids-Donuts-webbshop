@@ -1,6 +1,8 @@
 h1 {
   justify-self: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  left: 20%;
+  margin-top: 10px;
 }
 
 .cart {
@@ -47,6 +49,7 @@ main h2 {
     padding-left: 3px;
     padding-right: 3px;
     margin-top: 5px;
+    margin-bottom: 10px;
   }
 }
 
@@ -54,6 +57,10 @@ main h2 {
   grid-column: span 6;
   margin-bottom: 50px;
   font-size: 1rem;
+  border: solid 6px rgb(241, 231, 240);
+  border-radius: 20px;
+  margin-inline: 5px;
+  padding-bottom: 30px;
 
   input {
     width: 50%;

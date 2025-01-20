@@ -1,5 +1,8 @@
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .cart {
@@ -34,11 +37,14 @@ main h2 {
   .sort-alpha, 
   .sort-category {
     padding-inline: 4px;
+    margin-bottom: 0;
   }
 }
 
 .product {
   grid-column: span 4;
+  border: solid 8px rgb(241, 231, 240);
+  margin-inline: 6px;
     
   img {
     height: 55%;

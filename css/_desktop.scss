@@ -1,5 +1,5 @@
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 main h2 {
@@ -21,6 +21,7 @@ main h2 {
 .product {
   grid-column: span 3;
   font-size: 1.2rem;
+  margin-inline: 8px;
 
   input {
     width: 60%;
