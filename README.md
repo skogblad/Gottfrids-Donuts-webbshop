@@ -17,7 +17,7 @@
 
 As a part of an assignment during my front end education at [Medieinstitutet](https://github.com/medieinstitutet) we created a one page webshop that sells donuts, with mainly focus on JavaScript. Here we have more or less the full function of buying a donut with different discounts. 
 
-*Few selected aspects:*
+***Few selected aspects:***
 1. On Mondays before 10 am: 10% discount.
 2. On Fridays after 3 pm until Monday 3 am: an additional 15% price increase on each donut.
 3. Purchasing at least 10 of the same dounut: 10% discount.
