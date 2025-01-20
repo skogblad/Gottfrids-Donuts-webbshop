@@ -47,18 +47,18 @@ As a part of an assignment during my front end education at [Medieinstitutet](ht
 
 ## Validations
 
-**HTML validation:**
+#### HTML validation:
 ![HTML_validation](https://github.com/user-attachments/assets/458b16cd-6c06-4c56-8abb-0084a41e811b)
 
 <br>
 
-**CSS validation:**
+#### CSS validation:
 ![CSS_validation](https://github.com/user-attachments/assets/ec1aa608-d0bc-413f-a4d7-fdc34f3a56f3)
 
 
 <br>
 
-**Lighthouse Report** <br>
+#### Lighthouse Report
 ![LighthouseReport_desktop](https://github.com/user-attachments/assets/74fbc297-8de2-496e-a45c-eab7519384a6)
 
 
