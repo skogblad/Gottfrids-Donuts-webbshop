@@ -1,6 +1,20 @@
 
 # Gottfrids Donuts-webbshop
 
+## Table of contents
+
+- [About](#About)
+- [Demo](#Demo)
+- [Screenshot](#Screenshot)
+- [Tech Stack](#Tech-Stack)
+- [Validations](#Validations)
+  - [HTML validation](#HTML-validation)
+  - [CSS validation](#CSS-validation)
+  - [Lighthouse Report](#Lighthouse-Report)
+- [Authors](#Authors) 
+
+## About
+
 As a part of an assignment during my front end education at [Medieinstitutet](https://github.com/medieinstitutet) we created a one page webshop that sells donuts, with mainly focus on JavaScript. Here we have more or less the full function of buying a donut with different discounts. 
 
 *Few selected aspects:*
@@ -10,30 +24,28 @@ As a part of an assignment during my front end education at [Medieinstitutet](ht
 4. Free shipping when purchasing at least 15 donuts (otherwise 25 kr + 10% of total order sum.).
 5. The payment method "invoice" is not selectable when purchasing for 800 kr or more.
 
-
-
-
 ## Demo
+
 [Link to live version](https://skogblad.github.io/Gottfrids-Donuts-webbshop/)
 
-## Tech Stack
+## Screenshot
 
-**Client:** HTML, SASS, JavaScript
-
-**Server:** Node
-
-
-
-## Authors
-
-- [@skogblad](https://www.github.com/skogblad)
-
-
-## Screenshots
 ![file](https://github.com/user-attachments/assets/1c163afd-aa4a-4ff3-908f-3ea2eeb2e26f)
 ![file (kopia)](https://github.com/user-attachments/assets/b3779dc4-8a37-4df3-bcf8-c669c9215839)
 
-<br>
+## Tech Stack
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+
+![Prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)
+
+## Validations
 
 **HTML validation:**
 ![HTML_validation](https://github.com/user-attachments/assets/458b16cd-6c06-4c56-8abb-0084a41e811b)
@@ -50,6 +62,8 @@ As a part of an assignment during my front end education at [Medieinstitutet](ht
 ![LighthouseReport_desktop](https://github.com/user-attachments/assets/74fbc297-8de2-496e-a45c-eab7519384a6)
 
 
+## Authors
 
+- [@skogblad](https://www.github.com/skogblad)
 
 
